@@ -83,104 +83,120 @@ const companyLegalities = [
 export default function AboutPage() {
   return (
     <main>
-      <section className="pb-18 pt-8 md:pb-24 md:pt-10">
-        <div className="shell">
-          <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-            <Reveal className="max-w-2xl">
-              <span
-                className="eyebrow border-[rgba(74,78,161,0.12)] bg-white/72 text-[var(--brand)]"
-              >
-                <ShipWheel className="size-3.5 text-accent" aria-hidden="true" />
-                About WSS
-              </span>
+      <section className="relative isolate overflow-hidden py-16 md:py-24 lg:py-28">
+  {/* Background image */}
+  <div
+    className="pointer-events-none absolute inset-0 -z-10 overflow-hidden"
+    aria-hidden="true"
+  >
+    <Image
+      src="/images/background-about-us.png"
+      alt=""
+      fill
+      className="object-cover object-center opacity-[100%]"
+      sizes="100vw"
+    />
 
-              <h1 className="headline mt-6 text-foreground">
-                Moving maritime operations forward with trusted, practical support.
-              </h1>
+    {/* Soft overlay */}
+    <div className="absolute inset-0 bg-gradient-to-r from-[#f7f8fa]/95 via-[#f7f8fa]/85 to-[#f7f8fa]/65" />
 
-              <p className="section-copy mt-6 max-w-xl">
-                PT Wira Sarana Samudra is a Jakarta-based maritime services
-                provider supporting vessel, cargo, and port operations with
-                responsive coordination, reliable execution, and a straightforward
-                working style.
-              </p>
+    {/* Bottom fade */}
+    <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#f7f8fa] via-transparent to-transparent" />
 
-              <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-                <Button render={<Link href="/services" />} nativeButton={false} size="lg">
-                  Explore Services
-                  <ArrowRight className="size-4" aria-hidden="true" />
-                </Button>
-                <Button
-                  render={<Link href="/contacts" />}
-                  nativeButton={false}
-                  size="lg"
-                  variant="outline"
-                >
-                  Contact Us
-                </Button>
-              </div>
-            </Reveal>
+    {/* Subtle brand glow */}
+    <div
+      className="absolute -right-40 top-1/4 size-[520px] rounded-full bg-[var(--brand)]/8 blur-[120px]"
+      aria-hidden="true"
+    />
+  </div>
 
-            <Reveal
-              className="rounded-[32px] border border-white/72 bg-white/86 p-6 shadow-[0_32px_90px_-46px_rgba(17,31,56,0.5)] backdrop-blur-xl md:p-8"
-              direction="left"
-              delay={120}
-            >
-              <div className="flex items-center gap-3">
-                <span className="flex size-12 items-center justify-center rounded-full bg-secondary text-primary">
-                  <Building2 className="size-5" aria-hidden="true" />
-                </span>
-                <div>
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--brand)]">
-                    Company Snapshot
-                  </p>
-                  <p className="mt-1 font-serif text-2xl font-semibold text-foreground">
-                    PT Wira Sarana Samudra
-                  </p>
-                </div>
-              </div>
+  <div className="shell relative">
+    <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
 
-              <div className="mt-8 grid gap-4 md:grid-cols-2">
-                <div className="rounded-[24px] border border-border/75 bg-secondary/55 p-5">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--brand)]">
-                    Established
-                  </p>
-                  <p className="mt-2 font-serif text-3xl font-semibold text-foreground">
-                    2023
-                  </p>
-                </div>
-                <div className="rounded-[24px] border border-border/75 bg-secondary/55 p-5">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--brand)]">
-                    Core Focus
-                  </p>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                    Vessel, cargo, crew, and port operational support.
-                  </p>
-                </div>
-                <div className="rounded-[24px] border border-border/75 bg-secondary/55 p-5 md:col-span-2">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--brand)]">
-                    Address
-                  </p>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                    Komplek Perkantoran Tanjung Mas Raya Blok B1 No.17 Tanjung
-                    Barat, Jakarta Selatan 12530
-                  </p>
-                </div>
-              </div>
+      {/* LEFT */}
+      <Reveal>
+        <div className="max-w-3xl">
+          <h1 className="headline mt-6 text-foreground">
+            Moving maritime operations forward with trusted, practical support.
+          </h1>
 
-              <div className="mt-8 rounded-[24px] bg-primary px-5 py-5 text-primary-foreground">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent">
-                  Service Principle
-                </p>
-                <p className="mt-3 text-sm leading-relaxed text-primary-foreground/72">
-                  Reliable services, seamless operations, and practical support
-                  that stays close to real operational needs.
-                </p>
-              </div>
-            </Reveal>
+          <p className="section-copy mt-6 max-w-xl">
+            PT. Wira Sarana Samudra wasestablished in the year 2023
+            to serve the growing demand for shipping & logistics transport
+            services in Indonesia
+          </p>
+        </div>
+      </Reveal>
+
+      {/* RIGHT */}
+      <Reveal
+        className="rounded-[32px] border border-white/80 bg-white/75 p-6 shadow-[0_32px_90px_-46px_rgba(17,31,56,0.5)] backdrop-blur-xl md:p-8"
+        direction="left"
+        delay={120}
+      >
+        <div className="flex items-center gap-3">
+          <span className="flex size-12 items-center justify-center rounded-full bg-secondary text-primary">
+            <Building2 className="size-5" aria-hidden="true" />
+          </span>
+
+          <div>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--brand)]">
+              Company Snapshot
+            </p>
+
+            <p className="mt-1 font-serif text-2xl font-semibold text-foreground">
+              PT Wira Sarana Samudra
+            </p>
           </div>
         </div>
-      </section>
+
+        <div className="mt-8 grid gap-4 md:grid-cols-2">
+          <div className="rounded-[24px] border border-border/75 bg-white/65 p-5 backdrop-blur-sm">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--brand)]">
+              Established
+            </p>
+
+            <p className="mt-2 font-serif text-3xl font-semibold text-foreground">
+              2023
+            </p>
+          </div>
+
+          <div className="rounded-[24px] border border-border/75 bg-white/65 p-5 backdrop-blur-sm">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--brand)]">
+              Core Focus
+            </p>
+
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              Vessel, cargo, crew, and port operational support.
+            </p>
+          </div>
+
+          <div className="rounded-[24px] border border-border/75 bg-white/65 p-5 backdrop-blur-sm md:col-span-2">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--brand)]">
+              Address
+            </p>
+
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              Komplek Perkantoran Tanjung Mas Raya Blok B1 No.17 Tanjung
+              Barat, Jakarta Selatan 12530
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-8 rounded-[24px] bg-primary px-5 py-5 text-primary-foreground">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent">
+            Service Principle
+          </p>
+
+          <p className="mt-3 text-sm leading-relaxed text-primary-foreground/72">
+            Reliable services, seamless operations, and practical support
+            that stays close to real operational needs.
+          </p>
+        </div>
+      </Reveal>
+    </div>
+  </div>
+</section>
 
       <section className="section-band-alt py-20 md:py-28">
         <div className="shell">
@@ -306,8 +322,8 @@ export default function AboutPage() {
                 </span>
                 <h2 className="mt-6 font-serif text-3xl font-semibold">Vision</h2>
                 <p className="mt-4 max-w-xl text-base leading-relaxed text-primary-foreground/72 md:text-lg">
-                  To be one of the most preferable, reliable, and trusted maritime
-                  logistics providers in the Asia-Pacific region.
+                  To be one of the most preferrable, reliable and trusted
+                  maritime logistics providers in Asia Pacific.
                 </p>
               </div>
             </Reveal>
@@ -321,9 +337,9 @@ export default function AboutPage() {
                   Mission
                 </h2>
                 <p className="mt-4 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
-                  To deliver efficient and effective logistics solutions by creating
-                  innovation, offering practical alternatives, and maintaining
-                  predictable timing, consistent quality, and competitive value.
+                  To deliver efficient and effective logistic solutions to customers by
+                  creating innovations and providing variational solutions within predictable time,
+                  guarenteed quality and competitive price.
                 </p>
               </div>
             </Reveal>
@@ -342,11 +358,11 @@ export default function AboutPage() {
                 Company Legalities
               </span>
               <h2 className="section-title mt-6">
-                Corporate information presented in a cleaner, easier-to-scan format.
+                 Company Legalities & Information.
               </h2>
             </div>
 
-            <Button
+            {/* <Button
               render={<Link href="/contacts" />}
               nativeButton={false}
               variant="outline"
@@ -354,7 +370,7 @@ export default function AboutPage() {
             >
               Talk With Our Team
               <ArrowRight className="size-4" aria-hidden="true" />
-            </Button>
+            </Button> */}
           </Reveal>
 
           <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3">

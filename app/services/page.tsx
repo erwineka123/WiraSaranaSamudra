@@ -16,135 +16,13 @@ import {
 } from 'lucide-react'
 import { Reveal } from '@/components/reveal'
 import { Button } from '@/components/ui/button'
+import { services } from '@/lib/services'
 
 export const metadata: Metadata = {
   title: 'Maritime Services | PT Wira Sarana Samudra',
   description:
     'Comprehensive maritime services including ship agency, cargo supervision, tug and barge, ship chandling, bunkering, running store, crew workwear, and husbandry services.',
 }
-
-const services = [
-  {
-    icon: Anchor,
-    title: 'Ship Agency Services',
-    shortTitle: 'Ship Agency',
-    description:
-      'Professional ship agency services to ensure smooth, efficient, and compliant vessel operations throughout port activities.',
-    points: [
-      'Vessel documentation and port clearance',
-      'Coordination with port authorities',
-      'Clearance in and clearance out',
-      'Berthing and port arrangements',
-      'Crew change coordination',
-      'Operational support during port stay',
-    ],
-  },
-  {
-    icon: ClipboardCheck,
-    title: 'Loading & Unloading Supervision',
-    shortTitle: 'Cargo Supervision',
-    description:
-      'Professional supervision of cargo loading and unloading to keep operations safe, efficient, and properly documented.',
-    points: [
-      'Loading and discharging monitoring',
-      'Cargo quantity recording',
-      'Cargo condition inspection',
-      'Stevedore coordination',
-      'Operational monitoring',
-      'Accurate operational reporting',
-    ],
-  },
-  {
-    icon: Ship,
-    title: 'Tug & Barge Services',
-    shortTitle: 'Tug & Barge',
-    description:
-      'Reliable tug boat and barge support for marine transportation and the movement of different cargo types.',
-    points: [
-      'Tug boat and barge operations',
-      'Coal transportation',
-      'Construction material transportation',
-      'Heavy equipment transportation',
-      'General cargo transportation',
-      'Safety-focused marine operations',
-    ],
-  },
-  {
-    icon: PackageCheck,
-    title: 'Ship Chandler Services',
-    shortTitle: 'Ship Chandler',
-    description:
-      'Comprehensive vessel supplies delivered to support operations both at sea and while the vessel is in port.',
-    points: [
-      'Fresh and frozen provisions',
-      'Drinking water',
-      'Galley and kitchen supplies',
-      'Cleaning supplies',
-      'Deck and engine stores',
-      'Safety equipment and operational needs',
-    ],
-  },
-  {
-    icon: Fuel,
-    title: 'Bunker Services',
-    shortTitle: 'Bunkering',
-    description:
-      'Reliable marine fuel and lubricant supply with timely delivery and procedures aligned with maritime safety requirements.',
-    points: [
-      'Marine fuel supply',
-      'Lubricant supply',
-      'Timely fuel delivery',
-      'Safe bunkering procedures',
-      'Operational coordination',
-      'Compliance with maritime requirements',
-    ],
-  },
-  {
-    icon: Boxes,
-    title: 'Running Store',
-    shortTitle: 'Running Store',
-    description:
-      'Procurement and delivery of routine vessel consumables required for everyday onboard activities.',
-    points: [
-      'Office stationery',
-      'Cleaning supplies',
-      'Work equipment',
-      'Light spare parts',
-      'Operational support equipment',
-      'Other routine vessel requirements',
-    ],
-  },
-  {
-    icon: Shirt,
-    title: 'Crew Workwear & Uniform Supply',
-    shortTitle: 'Crew Workwear',
-    description:
-      'Workwear and uniform solutions tailored to the specifications, comfort, durability, and safety needs of shipping companies.',
-    points: [
-      'Daily crew uniforms',
-      'Workwear and coveralls',
-      'Safety vests',
-      'Jackets and outerwear',
-      'Crew identification items',
-      'Custom specifications and materials',
-    ],
-  },
-  {
-    icon: UsersRound,
-    title: 'Husbandry Services',
-    shortTitle: 'Husbandry',
-    description:
-      'Comprehensive husbandry support covering vessel and crew requirements throughout their stay in port.',
-    points: [
-      'Crew change arrangements',
-      'Crew transportation',
-      'Hotel reservations',
-      'Medical assistance',
-      'Visa and immigration documentation',
-      'Document and spare parts delivery',
-    ],
-  },
-]
 
 const operationalAreas = [
   {
@@ -318,7 +196,7 @@ export default function ServicesPage() {
 
               return (
                 <Reveal key={service.shortTitle} delay={index * 90} className="h-full">
-                  <article className="rounded-[32px] border border-white/72 bg-white/86 p-7 shadow-[0_28px_80px_-48px_rgba(17,31,56,0.48)] backdrop-blur-sm md:p-8">
+                  <article className="flex h-full flex-col rounded-[32px] border border-white/72 bg-white/86 p-7 shadow-[0_28px_80px_-48px_rgba(17,31,56,0.48)] backdrop-blur-sm md:p-8">
                     <div className="flex items-start justify-between gap-6">
                       <span className="flex size-12 items-center justify-center rounded-full bg-secondary text-primary">
                         <Icon className="size-5" aria-hidden="true" />
@@ -349,6 +227,17 @@ export default function ServicesPage() {
                         </li>
                       ))}
                     </ul>
+
+                    <Button
+                      render={<Link href={`/services/${service.slug}`} />}
+                      nativeButton={false}
+                      variant="outline"
+                      size="sm"
+                      className="mt-auto w-fit"
+                    >
+                      Open Service Page
+                      <ArrowRight className="size-4" aria-hidden="true" />
+                    </Button>
                   </article>
                 </Reveal>
               )

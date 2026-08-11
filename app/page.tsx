@@ -16,12 +16,12 @@ import { Reveal } from '@/components/reveal'
 import { Button } from '@/components/ui/button'
 import { ClientImage } from '@/components/client-image'
 
-const stats = [
-  { value: '24/7', label: 'Responsive operational coordination' },
-  { value: '120+', label: 'Vessel movements and support handled' },
-  { value: '18', label: 'Regional maritime touchpoints' },
-  { value: '2023', label: 'Established in Jakarta, Indonesia' },
-]
+// const stats = [
+//   { value: '24/7', label: 'Responsive operational coordination' },
+//   { value: '120+', label: 'Vessel movements and support handled' },
+//   { value: '18', label: 'Regional maritime touchpoints' },
+//   { value: '2023', label: 'Established in Jakarta, Indonesia' },
+// ]
 
 const capabilities = [
   {
@@ -52,6 +52,7 @@ const capabilities = [
 
 const services = [
   {
+    href: '/services/ship-agency-services',
     icon: ShipWheel,
     title: 'Ship Agency Services',
     description:
@@ -59,6 +60,7 @@ const services = [
     points: ['Port clearance', 'Authority coordination', 'Crew changes'],
   },
   {
+    href: '/services/loading-unloading-supervision',
     icon: PackageCheck,
     title: 'Loading & Unloading Supervision',
     description:
@@ -66,6 +68,7 @@ const services = [
     points: ['Cargo monitoring', 'Condition checks', 'Operational reporting'],
   },
   {
+    href: '/services/ship-chandler-services',
     icon: ShoppingCart,
     title: 'Ship Chandler Services',
     description:
@@ -97,140 +100,172 @@ const clientLogos = ['client-1', 'client-2', 'client-3', 'client-4', 'client-5']
 export default function HomePage() {
   return (
     <main>
-      <section className="pb-18 pt-8 md:pb-24 md:pt-10">
-        <div className="shell">
-          <div className="grid gap-10 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
-            <Reveal className="max-w-2xl">
-              <span
-                className="eyebrow border-[rgba(74,78,161,0.12)] bg-white/72 text-[var(--brand)]"
-              >
-                <Anchor className="size-3.5 text-accent" aria-hidden="true" />
-                Maritime Support Services
-              </span>
+      <section className="relative isolate overflow-hidden bg-[#f7f8fc] py-16 md:py-24 lg:py-28">
+  {/* =====================================================
+      BACKGROUND IMAGE
+  ====================================================== */}
+  <div
+    className="pointer-events-none absolute inset-0 -z-10 overflow-hidden"
+    aria-hidden="true"
+  >
+    <Image
+      src="/images/background-home.png"
+      alt=""
+      fill
+      priority
+      className="object-cover object-center opacity-[100%]"
+      sizes="100vw"
+    />
 
-              <h1 className="headline mt-6 text-foreground">
-                Reliable maritime support for smoother vessel, cargo, and crew
-                operations.
-              </h1>
+    {/* Main soft overlay */}
+    <div className="absolute inset-0 bg-gradient-to-r from-[#f7f8fc]/95 via-[#f7f8fc]/82 to-[#f7f8fc]/55" />
 
-              <p className="section-copy mt-6 max-w-xl">
-                PT Wira Sarana Samudra helps ship owners, operators, and cargo
-                stakeholders move with better coordination, dependable service,
-                and a clean operational rhythm from port arrival to departure.
-              </p>
+    {/* Bottom fade */}
+    <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#f7f8fc] via-transparent to-transparent" />
 
-              <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-                <Button render={<Link href="/services" />} nativeButton={false} size="lg">
-                  Explore Services
-                  <ArrowRight className="size-4" aria-hidden="true" />
-                </Button>
-                <Button
-                  render={<Link href="/about" />}
-                  nativeButton={false}
-                  size="lg"
-                  variant="outline"
-                >
-                  About WSS
-                </Button>
-              </div>
+    {/* Subtle brand tint */}
+    <div className="absolute -right-40 top-1/4 size-[520px] rounded-full bg-[var(--brand)]/8 blur-[120px]" />
+  </div>
 
-              <div className="mt-10 flex flex-wrap gap-3">
-                <span className="rounded-full border border-border/80 bg-white/78 px-4 py-2 text-xs font-medium text-foreground">
-                  SIUPKK Registered
-                </span>
-                <span className="rounded-full border border-border/80 bg-white/78 px-4 py-2 text-xs font-medium text-foreground">
-                  Jakarta Based
-                </span>
-                <span className="rounded-full border border-border/80 bg-white/78 px-4 py-2 text-xs font-medium text-foreground">
-                  24/7 Operational Support
-                </span>
-              </div>
-            </Reveal>
+  {/* =====================================================
+      CONTENT
+  ====================================================== */}
+  <div className="shell relative">
+    <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
 
-            <Reveal className="relative lg:pl-6" direction="left" delay={120}>
-              <div
-                className="pointer-events-none absolute -left-5 top-10 hidden size-28 rounded-full bg-[var(--brand)]/12 blur-3xl md:block"
-                aria-hidden="true"
-              />
-              <div
-                className="pointer-events-none absolute -right-5 bottom-8 hidden size-24 rounded-full bg-accent/16 blur-3xl md:block"
-                aria-hidden="true"
-              />
+      {/* =================================================
+          LEFT CONTENT
+      ================================================== */}
+      <Reveal>
+        <div className="max-w-3xl">
 
-              <div className="rounded-[32px] border border-white/72 bg-white/86 p-4 shadow-[0_32px_90px_-44px_rgba(17,31,56,0.52)] backdrop-blur-xl sm:p-5">
-                <div className="relative aspect-[16/10] overflow-hidden rounded-[28px] bg-primary lg:aspect-[16/9]">
-                  <Image
-                    src="/images/hero.png"
-                    alt="Commercial vessel at port"
-                    fill
-                    priority
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 44vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/30 to-transparent" />
+          {/* Small eyebrow */}
+          <div className="flex items-center gap-3">
+            <span className="h-px w-10 bg-accent" />
 
-                  <div className="absolute left-5 top-5 rounded-full border border-white/18 bg-white/10 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-white/88 backdrop-blur-sm">
-                    Jakarta - Indonesia
-                  </div>
-
-                  <div className="absolute inset-x-5 bottom-5 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-                    <div className="max-w-sm">
-                      <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/60">
-                        Trusted maritime partner
-                      </p>
-                      <p className="mt-2 max-w-[18ch] font-serif text-xl font-semibold text-white sm:text-2xl">
-                        Integrated support tailored around daily port operations.
-                      </p>
-                    </div>
-
-                    {/* <div className="w-fit rounded-[24px] border border-white/16 bg-white/12 px-4 py-4 text-white backdrop-blur-md">
-                      <p className="font-serif text-3xl font-semibold">18</p>
-                      <p className="mt-1 text-[11px] font-medium uppercase tracking-[0.18em] text-white/70">
-                        Regional touchpoints
-                      </p>
-                    </div> */}
-                  </div>
-                </div>
-
-                <div className="mt-4 grid gap-3 rounded-[24px] border border-border/70 bg-background/82 p-4 sm:grid-cols-[1fr_auto] sm:items-end">
-                  <div>
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--brand)]">
-                      Wira Sarana Samudra
-                    </p>
-                    <p className="mt-2 max-w-md text-sm leading-relaxed text-muted-foreground">
-                      We support ship agency, cargo supervision, vessel supplies,
-                      bunkering, running store, and husbandry requirements through
-                      one coordinated team.
-                    </p>
-                  </div>
-
-                  {/* <div className="rounded-[22px] bg-primary px-5 py-4 text-primary-foreground">
-                    <p className="font-serif text-2xl font-semibold">120+</p>
-                    <p className="mt-1 text-[11px] uppercase tracking-[0.2em] text-primary-foreground/70">
-                      Support activity handled
-                    </p>
-                  </div> */}
-                </div>
-              </div>
-            </Reveal>
+            <span className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--brand)]">
+              Maritime Support & Services
+            </span>
           </div>
 
-          <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-            {stats.map((item, index) => (
-              <Reveal key={item.label} delay={index * 90} className="h-full">
-                <div className="rounded-[28px] border border-white/72 bg-white/82 px-6 py-6 shadow-[0_24px_70px_-48px_rgba(17,31,56,0.55)] backdrop-blur-sm">
-                  <p className="font-serif text-3xl font-semibold text-foreground">{item.value}</p>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                    {item.label}
-                  </p>
-                </div>
-              </Reveal>
-            ))}
+          <h1 className="headline mt-6 text-foreground">
+            Reliable maritime support for smoother vessel, cargo, and crew
+            operations.
+          </h1>
+
+          <p className="section-copy mt-6 max-w-xl">
+            PT Wira Sarana Samudra helps ship owners, operators, and cargo
+            stakeholders move with better coordination, dependable service,
+            and a clean operational rhythm from port arrival to departure.
+          </p>
+
+          {/* CTA */}
+          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <Button
+              render={<Link href="/about" />}
+              nativeButton={false}
+              size="lg"
+            >
+              About WSS
+              <ArrowRight className="size-4" aria-hidden="true" />
+            </Button>
+          </div>
+
+          {/* Trust badges */}
+          <div className="mt-10 flex flex-wrap gap-3">
+            <span className="rounded-full border border-border/80 bg-white/72 px-4 py-2 text-xs font-medium text-foreground shadow-sm backdrop-blur-sm">
+              SIUPKK Registered
+            </span>
+
+            <span className="rounded-full border border-border/80 bg-white/72 px-4 py-2 text-xs font-medium text-foreground shadow-sm backdrop-blur-sm">
+              Jakarta Based
+            </span>
+
+            <span className="rounded-full border border-border/80 bg-white/72 px-4 py-2 text-xs font-medium text-foreground shadow-sm backdrop-blur-sm">
+              24/7 Operational Support
+            </span>
           </div>
         </div>
-      </section>
+      </Reveal>
 
-      <section className="section-band py-20 md:py-28">
+      {/* =================================================
+          RIGHT HERO IMAGE
+      ================================================== */}
+      <Reveal
+        className="relative lg:pl-6"
+        direction="left"
+        delay={120}
+      >
+        {/* Decorative glow */}
+        <div
+          className="pointer-events-none absolute -left-8 top-10 hidden size-32 rounded-full bg-[var(--brand)]/14 blur-3xl md:block"
+          aria-hidden="true"
+        />
+
+        <div
+          className="pointer-events-none absolute -right-8 bottom-8 hidden size-28 rounded-full bg-accent/16 blur-3xl md:block"
+          aria-hidden="true"
+        />
+
+        {/* Main image container */}
+        <div className="relative rounded-[32px] border border-white/80 bg-white/70 p-4 shadow-[0_32px_90px_-44px_rgba(17,31,56,0.52)] backdrop-blur-xl sm:p-5">
+
+          <div className="relative aspect-[16/10] overflow-hidden rounded-[26px] bg-primary lg:aspect-[16/9]">
+
+            <Image
+              src="/images/hero.png"
+              alt="Commercial vessel at port"
+              fill
+              priority
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 44vw"
+            />
+
+            {/* Image overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/25 to-transparent" />
+
+            {/* Location */}
+            <div className="absolute left-5 top-5 rounded-full border border-white/18 bg-white/10 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-white/88 backdrop-blur-sm">
+              Jakarta - Indonesia
+            </div>
+
+            {/* Image content */}
+            <div className="absolute inset-x-5 bottom-5">
+              <div className="max-w-sm">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/60">
+                  Trusted maritime partner
+                </p>
+
+                <p className="mt-2 max-w-[18ch] font-serif text-xl font-semibold leading-tight text-white sm:text-2xl">
+                  Integrated support tailored around daily port operations.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* =================================================
+              INFO CARD BELOW IMAGE
+          ================================================== */}
+          <div className="mt-4 grid gap-3 rounded-[22px] border border-border/70 bg-white/70 p-4 backdrop-blur-md sm:grid-cols-[1fr_auto] sm:items-end">
+            <div>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--brand)]">
+                Wira Sarana Samudra
+              </p>
+
+              <p className="mt-2 max-w-md text-sm leading-relaxed text-muted-foreground">
+                We support ship agency, cargo supervision, vessel supplies,
+                bunkering, running store, and husbandry requirements through
+                one coordinated team.
+              </p>
+            </div>
+          </div>
+        </div>
+      </Reveal>
+    </div>
+  </div>
+</section>
+
+      <section className="section-band py-20 md:py-28 bg-grey-50">
         <div className="shell">
           <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:gap-16">
             <Reveal className="relative order-2 lg:order-1" direction="right">
@@ -302,7 +337,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section-band-alt py-20 md:py-28">
+      <section className="section-band-alt py-20 md:py-28 bg-[#f4f5f7]">
         <div className="shell">
           <Reveal className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-2xl">
@@ -334,7 +369,7 @@ export default function HomePage() {
 
               return (
                 <Reveal key={service.title} delay={index * 100} className="h-full">
-                  <article className="rounded-[32px] border border-white/72 bg-white/86 p-7 shadow-[0_28px_80px_-48px_rgba(17,31,56,0.52)] backdrop-blur-sm">
+                  <article className="flex h-full flex-col rounded-[32px] border border-white/72 bg-white/86 p-7 shadow-[0_28px_80px_-48px_rgba(17,31,56,0.52)] backdrop-blur-sm">
                     <div className="flex items-start justify-between gap-6">
                       <span className="flex size-12 items-center justify-center rounded-full bg-secondary text-primary">
                         <Icon className="size-5" aria-hidden="true" />
