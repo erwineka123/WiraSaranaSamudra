@@ -12,7 +12,7 @@ import { serviceMenuItems } from '@/lib/services'
 const navItems = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About Us' },
-    // { href: '/contacts', label: 'Contact' },
+  // { href: '/contacts', label: 'Contact' },
 ]
 
 export function SiteHeader() {

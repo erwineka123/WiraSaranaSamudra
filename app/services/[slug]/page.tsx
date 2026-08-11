@@ -172,7 +172,7 @@ export default function ServicePage({ params }: ServicePageProps) {
                     <div className="absolute inset-x-5 bottom-5">
                       <div className="rounded-[26px] border border-white/14 bg-white/12 p-5 text-white backdrop-blur-md">
                         <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/68">
-                            {service.pageEyebrow}
+                          {service.pageEyebrow}
                         </p>
                         <p className="mt-3 font-serif text-2xl font-semibold">
                           {service.shortTitle}
