@@ -65,7 +65,7 @@ export default function ContactPage() {
                 coordinate the next step with you.
               </p>
 
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              {/* <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Button
                   render={
                     <Link
@@ -90,7 +90,7 @@ export default function ContactPage() {
                 >
                   Email Our Team
                 </Button>
-              </div>
+              </div> */}
 
               <div className="mt-10 grid gap-4">
                 {contactDetails.map((item, index) => {

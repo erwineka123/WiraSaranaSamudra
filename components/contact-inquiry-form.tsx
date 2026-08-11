@@ -135,7 +135,7 @@ export function ContactInquiryForm() {
             type="tel"
             value={form.phone}
             onChange={(event) => updateField('phone', event.target.value)}
-            placeholder="+62 ..."
+            placeholder="+62"
             className="h-13 w-full rounded-[20px] border border-border/80 bg-background/80 px-4 text-sm text-foreground outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/10"
           />
         </div>
