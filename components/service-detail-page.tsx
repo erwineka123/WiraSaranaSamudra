@@ -122,7 +122,7 @@ export function ServiceDetailPage({ service }: ServiceDetailPageProps) {
                   {service.description}
                 </p>
 
-                <div className="mt-9 flex flex-wrap gap-3">
+                {/* <div className="mt-9 flex flex-wrap gap-3">
                   <Button
                     render={<Link href="/contacts" />}
                     nativeButton={false}
@@ -142,7 +142,7 @@ export function ServiceDetailPage({ service }: ServiceDetailPageProps) {
                   >
                     Explore Services
                   </Button>
-                </div>
+                </div> */}
               </div>
             </Reveal>
 
