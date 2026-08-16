@@ -57,7 +57,7 @@ export function ServiceDetailPage({ service }: ServiceDetailPageProps) {
         <div className="shell relative">
           {/* Breadcrumb */}
           <Reveal>
-            <div className="flex items-center gap-2 pt-8 text-sm text-primary-foreground/55">
+            <div className="flex items-center gap-2 pt-8 text-base text-primary-foreground/55">
               <Link
                 href="/"
                 className="transition-colors hover:text-white"
@@ -65,14 +65,14 @@ export function ServiceDetailPage({ service }: ServiceDetailPageProps) {
                 Home
               </Link>
 
-              <ChevronRight className="size-3.5" />
+              {/* <ChevronRight className="size-3.5" /> */}
 
-              <Link
+              {/* <Link
                 href="/services"
                 className="transition-colors hover:text-white"
               >
                 Services
-              </Link>
+              </Link> */}
 
               <ChevronRight className="size-3.5" />
 
@@ -88,7 +88,7 @@ export function ServiceDetailPage({ service }: ServiceDetailPageProps) {
                 {/* Back */}
                 <Link
                   href="/"
-                  className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-primary-foreground/65 transition-colors hover:text-white"
+                  className="mb-8 inline-flex items-center gap-2 text-base font-medium text-primary-foreground/65 transition-colors hover:text-white"
                 >
                   <ArrowLeft className="size-4" />
                   Back to Home
@@ -108,7 +108,7 @@ export function ServiceDetailPage({ service }: ServiceDetailPageProps) {
                       Marine Service
                     </p>
 
-                    <p className="mt-1 text-sm text-primary-foreground/65">
+                    <p className="mt-1 text-base text-primary-foreground/65">
                       {service.shortTitle}
                     </p>
                   </div>
@@ -159,7 +159,7 @@ export function ServiceDetailPage({ service }: ServiceDetailPageProps) {
                       {String(service.points.length).padStart(2, '0')}
                     </p>
 
-                    <p className="mt-1 text-sm text-primary-foreground/55">
+                    <p className="mt-1 text-base text-primary-foreground/55">
                       Key service capabilities
                     </p>
                   </div>
@@ -167,7 +167,7 @@ export function ServiceDetailPage({ service }: ServiceDetailPageProps) {
                   <div className="h-px bg-white/10" />
 
                   <div>
-                    <p className="text-sm leading-6 text-primary-foreground/60">
+                    <p className="text-base leading-6 text-primary-foreground/60">
                       Professional maritime support designed around operational
                       requirements, safety, and reliable service delivery.
                     </p>
@@ -226,29 +226,33 @@ export function ServiceDetailPage({ service }: ServiceDetailPageProps) {
                 </div>
 
                 <div className="mt-12 grid gap-px overflow-hidden rounded-[24px] border border-border/70 bg-border/70 sm:grid-cols-2">
-                  {service.points.map((point, index) => (
-                    <div
-                      key={point}
-                      className="group bg-background p-6 transition-colors hover:bg-secondary/60"
-                    >
-                      <div className="flex items-start gap-4">
-                        <span className="flex size-9 shrink-0 items-center justify-center rounded-full border border-border bg-secondary text-xs font-semibold text-[var(--brand)]">
-                          {String(index + 1).padStart(2, '0')}
-                        </span>
+                  {service.points.map((point, index) => {
+  const PointIcon = point.icon
 
-                        <div>
-                          <CheckCircle2
-                            className="mb-3 size-4 text-accent"
-                            aria-hidden="true"
-                          />
+  return (
+    <div
+      key={point.text}
+      className="group bg-background p-6 transition-colors hover:bg-secondary/60"
+    >
+      <div className="flex items-start gap-4">
+        <span className="flex size-9 shrink-0 items-center justify-center rounded-full border border-border bg-secondary text-xs font-semibold text-[var(--brand)]">
+          {String(index + 1).padStart(2, '0')}
+        </span>
 
-                          <p className="text-sm font-medium leading-6 text-foreground">
-                            {point}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
+        <div>
+          <PointIcon
+            className="mb-3 size-5 text-accent"
+            aria-hidden="true"
+          />
+
+          <p className="text-base font-medium leading-6 text-foreground">
+            {point.text}
+          </p>
+        </div>
+      </div>
+    </div>
+  )
+})}
                 </div>
               </div>
             </Reveal>
@@ -298,7 +302,7 @@ export function ServiceDetailPage({ service }: ServiceDetailPageProps) {
                     Professional Standard
                   </p>
 
-                  <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                  <p className="mt-2 text-base leading-6 text-muted-foreground">
                     Focused on dependable maritime operations and service
                     coordination.
                   </p>
@@ -362,7 +366,7 @@ export function ServiceDetailPage({ service }: ServiceDetailPageProps) {
                           {item.title}
                         </h3>
 
-                        <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                        <p className="mt-2 text-base leading-6 text-muted-foreground">
                           {item.description}
                         </p>
                       </div>
@@ -409,11 +413,11 @@ export function ServiceDetailPage({ service }: ServiceDetailPageProps) {
               <div className="border-b border-border/70 p-7 md:border-b-0 md:border-r">
                 <p className="font-serif text-3xl font-semibold">01</p>
 
-                <h3 className="mt-5 text-sm font-semibold uppercase tracking-[0.15em]">
+                <h3 className="mt-5 text-base font-semibold uppercase tracking-[0.15em]">
                   Clear Scope
                 </h3>
 
-                <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                <p className="mt-3 text-base leading-6 text-muted-foreground">
                   Clearly defined service coverage and operational
                   requirements.
                 </p>
@@ -422,11 +426,11 @@ export function ServiceDetailPage({ service }: ServiceDetailPageProps) {
               <div className="border-b border-border/70 p-7 md:border-b-0 md:border-r">
                 <p className="font-serif text-3xl font-semibold">02</p>
 
-                <h3 className="mt-5 text-sm font-semibold uppercase tracking-[0.15em]">
+                <h3 className="mt-5 text-base font-semibold uppercase tracking-[0.15em]">
                   Reliable Support
                 </h3>
 
-                <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                <p className="mt-3 text-base leading-6 text-muted-foreground">
                   Responsive coordination designed around the needs of each
                   operation.
                 </p>
@@ -435,11 +439,11 @@ export function ServiceDetailPage({ service }: ServiceDetailPageProps) {
               <div className="p-7">
                 <p className="font-serif text-3xl font-semibold">03</p>
 
-                <h3 className="mt-5 text-sm font-semibold uppercase tracking-[0.15em]">
+                <h3 className="mt-5 text-base font-semibold uppercase tracking-[0.15em]">
                   Professional Delivery
                 </h3>
 
-                <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                <p className="mt-3 text-base leading-6 text-muted-foreground">
                   A structured approach focused on quality, communication, and
                   dependable execution.
                 </p>

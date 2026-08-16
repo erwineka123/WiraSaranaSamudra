@@ -31,7 +31,7 @@
 
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Geist, Geist_Mono, Fraunces } from 'next/font/google'
+import { Geist, Geist_Mono, Plus_Jakarta_Sans } from 'next/font/google'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import './globals.css'
@@ -46,9 +46,9 @@ const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
 })
 
-const fraunces = Fraunces({
+const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ['latin'],
-  variable: '--font-fraunces',
+  variable: '--font-plus-jakarta',
 })
 
 export const metadata: Metadata = {
@@ -87,7 +87,7 @@ export default function RootLayout({
   return (
     <html
       lang="id"
-      className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} bg-background`}
+      className={`${geistSans.variable} ${geistMono.variable} ${plusJakartaSans.variable} bg-background`}
     >
       <body className="min-h-screen bg-background font-sans text-foreground antialiased">
         <SiteHeader />

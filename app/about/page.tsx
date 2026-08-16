@@ -166,7 +166,7 @@ export default function AboutPage() {
                     Core Focus
                   </p>
 
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  <p className="mt-2 text-base leading-relaxed text-muted-foreground">
                     Vessel, cargo, crew, and port operational support.
                   </p>
                 </div>
@@ -176,7 +176,7 @@ export default function AboutPage() {
                     Address
                   </p>
 
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  <p className="mt-2 text-base leading-relaxed text-muted-foreground">
                     Komplek Perkantoran Tanjung Mas Raya Blok B1 No.17 Tanjung
                     Barat, Jakarta Selatan 12530
                   </p>
@@ -188,7 +188,7 @@ export default function AboutPage() {
                   Service Principle
                 </p>
 
-                <p className="mt-3 text-sm leading-relaxed text-primary-foreground/72">
+                <p className="mt-3 text-base leading-relaxed text-primary-foreground/72">
                   Reliable services, seamless operations, and practical support
                   that stays close to real operational needs.
                 </p>
@@ -229,7 +229,7 @@ export default function AboutPage() {
                     <h3 className="mt-6 font-serif text-2xl font-semibold text-foreground">
                       {item.title}
                     </h3>
-                    <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                    <p className="mt-4 text-base leading-relaxed text-muted-foreground">
                       {item.description}
                     </p>
                   </article>
@@ -302,7 +302,7 @@ export default function AboutPage() {
                 <p className="font-serif text-xl font-semibold text-foreground">
                   Trusted expertise. Seamless maritime operations.
                 </p>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                <p className="mt-3 text-base leading-relaxed text-muted-foreground">
                   A practical maritime partner for vessel support, cargo activity,
                   and port-side coordination.
                 </p>
@@ -380,7 +380,7 @@ export default function AboutPage() {
                   <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--brand)]">
                     {item.label}
                   </p>
-                  <p className="mt-3 text-sm leading-relaxed text-foreground">
+                  <p className="mt-3 text-base leading-relaxed text-foreground">
                     {item.value}
                   </p>
                 </div>

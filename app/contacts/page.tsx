@@ -33,7 +33,7 @@ const contactDetails = [
   {
     icon: Clock3,
     label: 'Office Hours',
-    value: 'Monday - Friday, 09:00 - 17:00 WIB',
+    value: 'Open 24 Hours',
   },
 ]
 
@@ -105,7 +105,7 @@ export default function ContactPage() {
                           </span>
 
                           <div>
-                            <p className="text-sm font-semibold text-primary-foreground">
+                            <p className="text-base font-semibold text-primary-foreground">
                               {item.label}
                             </p>
                             {item.href ? (
@@ -117,12 +117,12 @@ export default function ContactPage() {
                                     ? 'noopener noreferrer'
                                     : undefined
                                 }
-                                className="mt-2 block text-sm leading-relaxed text-primary-foreground/68 transition-colors hover:text-primary-foreground"
+                                className="mt-2 block text-base leading-relaxed text-primary-foreground/68 transition-colors hover:text-primary-foreground"
                               >
                                 {item.value}
                               </a>
                             ) : (
-                              <p className="mt-2 text-sm leading-relaxed text-primary-foreground/68">
+                              <p className="mt-2 text-base leading-relaxed text-primary-foreground/68">
                                 {item.value}
                               </p>
                             )}
@@ -150,7 +150,7 @@ export default function ContactPage() {
                 <h2 className="mt-6 font-serif text-3xl font-semibold text-foreground md:text-4xl">
                   Tell us what you need and choose the channel that suits you.
                 </h2>
-                <p className="mt-4 text-sm leading-relaxed text-muted-foreground md:text-base">
+                <p className="mt-4 text-base leading-relaxed text-muted-foreground md:text-lg">
                   Fill in the details below, then send your inquiry directly by
                   email or WhatsApp with the prepared message.
                 </p>

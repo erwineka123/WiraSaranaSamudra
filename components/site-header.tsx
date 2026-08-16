@@ -42,10 +42,10 @@ export function SiteHeader() {
   }
 
   return (
-    <header className="sticky top-1 z-50 px-4">
-      <div className="mx-auto max-w-[1460px]">
-        <div className="rounded-[28px] border border-black/25 bg-background/88 shadow-[0_26px_70px_-42px_rgba(17,31,56,0.55)] backdrop-blur-xl">
-          <div className="flex h-[76px] items-center justify-between px-5 sm:px-6 md:px-8">
+    <header className="sticky top-0 z-50">
+      <div className="mx-auto max-w-full">
+        <div className="border-b border-black/10 backdrop-blur-[2px] bg-white/80 backdrop-saturate-150">
+          <div className="mx-auto max-w-[1460px] flex h-[76px] items-center justify-between px-5 sm:px-6 md:px-8">
             <Link
               href="/"
               className="flex items-center"
@@ -54,7 +54,7 @@ export function SiteHeader() {
                 setServicesOpen(false)
               }}
             >
-              <SiteLogo className="h-9 w-[190px] sm:h-10 sm:w-[220px]" priority />
+              <SiteLogo className="h-9 w-[220px] sm:h-15 sm:w-[220px]" priority />
             </Link>
 
             <nav
@@ -69,7 +69,7 @@ export function SiteHeader() {
                     key={item.href}
                     href={item.href}
                     className={cn(
-                      'rounded-full px-4 py-2 text-sm font-medium transition-all',
+                      'rounded-full px-4 py-2 text-base font-medium transition-all',
                       active
                         ? 'bg-primary text-primary-foreground shadow-[0_12px_24px_-18px_rgba(17,31,56,0.65)]'
                         : 'text-muted-foreground hover:text-foreground',
@@ -88,7 +88,7 @@ export function SiteHeader() {
                 <button
                   type="button"
                   className={cn(
-                    'inline-flex items-center gap-1 rounded-full px-4 py-2 text-sm font-medium transition-all',
+                    'inline-flex items-center gap-1 rounded-full px-4 py-2 text-base font-medium transition-all',
                     serviceActive
                       ? 'bg-primary text-primary-foreground shadow-[0_12px_24px_-18px_rgba(17,31,56,0.65)]'
                       : 'text-muted-foreground hover:text-foreground',
@@ -110,7 +110,7 @@ export function SiteHeader() {
                           key={item.href}
                           href={item.href}
                           onClick={() => setServicesOpen(false)}
-                          className="rounded-2xl px-3 py-3 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+                          className="rounded-2xl px-3 py-3 text-base font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
                         >
                           {item.label}
                         </Link>
@@ -122,7 +122,7 @@ export function SiteHeader() {
             </nav>
 
             <div className="hidden items-center gap-3 md:flex">
-              <span className="text-sm text-muted-foreground">Need fast coordination?</span>
+              <span className="text-base text-muted-foreground">Need fast coordination?</span>
               <Button render={<Link href="/contacts" />} nativeButton={false} size="lg">
                 Contact Us
                 <ArrowRight className="size-4" aria-hidden="true" />
@@ -158,7 +158,7 @@ export function SiteHeader() {
                       href={item.href}
                       onClick={() => setOpen(false)}
                       className={cn(
-                        'rounded-2xl px-4 py-3 text-sm font-medium transition-colors',
+                        'rounded-2xl px-4 py-3 text-base font-medium transition-colors',
                         active
                           ? 'bg-primary text-primary-foreground'
                           : 'text-muted-foreground hover:bg-secondary hover:text-foreground',
@@ -170,7 +170,7 @@ export function SiteHeader() {
                 })}
 
                 <div className="rounded-[22px] border border-border/70 bg-white/70 p-2">
-                  <div className="flex items-center justify-between px-2 py-2 text-sm font-semibold text-foreground">
+                  <div className="flex items-center justify-between px-2 py-2 text-base font-semibold text-foreground">
                     <span>Services</span>
                     <button
                       type="button"
@@ -189,7 +189,7 @@ export function SiteHeader() {
                           key={item.href}
                           href={item.href}
                           onClick={() => setOpen(false)}
-                          className="rounded-2xl px-3 py-3 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+                          className="rounded-2xl px-3 py-3 text-base font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
                         >
                           {item.label}
                         </Link>

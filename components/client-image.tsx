@@ -26,7 +26,7 @@ export function ClientImage({
     return (
       <div
         className={cn(
-          'flex h-full w-full items-center justify-center rounded-2xl border border-dashed border-border bg-muted/35 px-6 py-10 text-center text-sm font-medium text-muted-foreground',
+          'flex h-full w-full items-center justify-center rounded-2xl border border-dashed border-border bg-muted/35 px-6 py-10 text-center text-base font-medium text-muted-foreground',
           className,
         )}
       >

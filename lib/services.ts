@@ -3,12 +3,26 @@ import {
   Anchor,
   Boxes,
   ClipboardCheck,
+  Eye,
+  FileCheck,
+  FileText,
   Fuel,
+  Landmark,
+  LogIn,
+  Monitor,
   PackageCheck,
+  Ruler,
+  Search,
   Shirt,
   Ship,
+  Users,
   UsersRound,
 } from 'lucide-react'
+
+export type ServicePoint = {
+  icon: LucideIcon
+  text: string
+}
 
 export type ServiceItem = {
   slug: string
@@ -23,38 +37,56 @@ export type ServiceItem = {
   pageTitle: string
   pageSummary: string
   pageNote: string
-  points: string[]
+  points: ServicePoint[]
 }
 
 export const services: ServiceItem[] = [
   {
-    slug: 'ship-agency-services',
-    pageRoute: '/services/service-1',
-    icon: Anchor,
-    title: 'Ship Agency Services',
-    shortTitle: 'Ship Agency',
-    description:
-      'Professional ship agency services to ensure smooth, efficient, and compliant vessel operations throughout port activities.',
-    imagePath: '/images/services/service-1.png',
-    imageAlt: 'Ship agency operations on a vessel at port',
-    pageEyebrow: 'Port Coordination',
-    pageTitle: 'Managed vessel calls with clear coordination and documentation.',
-    pageSummary:
-      'We handle arrival coordination, port clearance, berthing support, and departure handling so vessel movements remain organized from start to finish.',
-    pageNote:
-      'Ideal for vessel owners and operators who want one partner to manage port-side communication and paperwork.',
-    points: [
-      'Vessel documentation and port clearance',
-      'Coordination with port authorities',
-      'Clearance in and clearance out',
-      'Berthing and port arrangements',
-      'Crew change coordination',
-      'Operational support during port stay',
-    ],
-  },
+  slug: 'ship-agency-services',
+  pageRoute: '/service-1',
+  icon: Anchor,
+  title: 'Ship Agency Services',
+  shortTitle: 'Ship Agency',
+  description:
+    'Professional ship agency services to ensure smooth, efficient, and compliant vessel operations throughout port activities.',
+  imagePath: '/images/services/service-1.png',
+  imageAlt: 'Ship agency operations on a vessel at port',
+  pageEyebrow: 'Port Coordination',
+  pageTitle: 'Managed vessel calls with clear coordination and documentation.',
+  pageSummary:
+    'We handle arrival coordination, port clearance, berthing support, and departure handling so vessel movements remain organized from start to finish.',
+  pageNote:
+    'Ideal for vessel owners and operators who want one partner to manage port-side communication and paperwork.',
+  points: [
+    {
+      icon: FileCheck,
+      text: 'Vessel documentation and port clearance',
+    },
+    {
+      icon: Landmark,
+      text: 'Coordination with port authorities',
+    },
+    {
+      icon: LogIn,
+      text: 'Clearance in and clearance out',
+    },
+    {
+      icon: Anchor,
+      text: 'Berthing and port arrangements',
+    },
+    {
+      icon: Users,
+      text: 'Crew change coordination',
+    },
+    {
+      icon: ClipboardCheck,
+      text: 'Operational support during port stay',
+    },
+  ],
+},
   {
     slug: 'loading-unloading-supervision',
-    pageRoute: '/services/service-2',
+    pageRoute: '/service-2',
     icon: ClipboardCheck,
     title: 'Loading & Unloading Supervision',
     shortTitle: 'Cargo Supervision',
@@ -69,17 +101,35 @@ export const services: ServiceItem[] = [
     pageNote:
       'Useful when you need consistent reporting and practical supervision during active cargo work.',
     points: [
-      'Loading and discharging monitoring',
-      'Cargo quantity recording',
-      'Cargo condition inspection',
-      'Stevedore coordination',
-      'Operational monitoring',
-      'Accurate operational reporting',
+      {
+        icon: Eye,
+        text: 'Loading and discharging monitoring',
+      },
+      {
+        icon: Ruler,
+        text: 'Cargo quantity recording',
+      },
+      {
+        icon: Search,
+        text: 'Cargo condition inspection',
+      },
+      {
+        icon: Users,
+        text: 'Stevedore coordination',
+      },
+      {
+        icon: Monitor,
+        text: 'Operational monitoring',
+      },
+      {
+        icon: FileText,
+        text: 'Accurate operational reporting',
+      },
     ],
   },
   {
     slug: 'tug-and-barge-services',
-    pageRoute: '/services/service-3',
+    pageRoute: '/service-3',
     icon: Ship,
     title: 'Tug & Barge Services',
     shortTitle: 'Tug & Barge',
@@ -94,17 +144,35 @@ export const services: ServiceItem[] = [
     pageNote:
       'Best suited for cargo movements that need reliable marine transport support and close operational follow-up.',
     points: [
-      'Tug boat and barge operations',
-      'Coal transportation',
-      'Construction material transportation',
-      'Heavy equipment transportation',
-      'General cargo transportation',
-      'Safety-focused marine operations',
+      {
+        icon: Ship,
+        text: 'Tug boat and barge operations',
+      },
+      {
+        icon: PackageCheck,
+        text: 'Coal transportation',
+      },
+      {
+        icon: Boxes,
+        text: 'Construction material transportation',
+      },
+      {
+        icon: Boxes,
+        text: 'Heavy equipment transportation',
+      },
+      {
+        icon: PackageCheck,
+        text: 'General cargo transportation',
+      },
+      {
+        icon: ClipboardCheck,
+        text: 'Safety-focused marine operations',
+      },
     ],
   },
   {
     slug: 'ship-chandler-services',
-    pageRoute: '/services/service-4',
+    pageRoute: '/service-4',
     icon: PackageCheck,
     title: 'Ship Chandler Services',
     shortTitle: 'Ship Chandler',
@@ -119,17 +187,35 @@ export const services: ServiceItem[] = [
     pageNote:
       'Useful for vessels that need routine supply support without losing time in port.',
     points: [
-      'Fresh and frozen provisions',
-      'Drinking water',
-      'Galley and kitchen supplies',
-      'Cleaning supplies',
-      'Deck and engine stores',
-      'Safety equipment and operational needs',
+      {
+        icon: PackageCheck,
+        text: 'Fresh and frozen provisions',
+      },
+      {
+        icon: PackageCheck,
+        text: 'Drinking water',
+      },
+      {
+        icon: Boxes,
+        text: 'Galley and kitchen supplies',
+      },
+      {
+        icon: Boxes,
+        text: 'Cleaning supplies',
+      },
+      {
+        icon: PackageCheck,
+        text: 'Deck and engine stores',
+      },
+      {
+        icon: ClipboardCheck,
+        text: 'Safety equipment and operational needs',
+      },
     ],
   },
   {
     slug: 'bunker-services',
-    pageRoute: '/services/service-5',
+    pageRoute: '/service-5',
     icon: Fuel,
     title: 'Bunker Services',
     shortTitle: 'Bunkering',
@@ -144,17 +230,35 @@ export const services: ServiceItem[] = [
     pageNote:
       'A practical fit for vessels needing fuel coordination in a structured and time-sensitive way.',
     points: [
-      'Marine fuel supply',
-      'Lubricant supply',
-      'Timely fuel delivery',
-      'Safe bunkering procedures',
-      'Operational coordination',
-      'Compliance with maritime requirements',
+      {
+        icon: Fuel,
+        text: 'Marine fuel supply',
+      },
+      {
+        icon: Fuel,
+        text: 'Lubricant supply',
+      },
+      {
+        icon: Fuel,
+        text: 'Timely fuel delivery',
+      },
+      {
+        icon: ClipboardCheck,
+        text: 'Safe bunkering procedures',
+      },
+      {
+        icon: Users,
+        text: 'Operational coordination',
+      },
+      {
+        icon: ClipboardCheck,
+        text: 'Compliance with maritime requirements',
+      },
     ],
   },
   {
     slug: 'running-store',
-    pageRoute: '/services/service-6',
+    pageRoute: '/service-6',
     icon: Boxes,
     title: 'Running Store',
     shortTitle: 'Running Store',
@@ -169,17 +273,35 @@ export const services: ServiceItem[] = [
     pageNote:
       'Good for ongoing consumable needs that need a quick and steady supply chain.',
     points: [
-      'Office stationery',
-      'Cleaning supplies',
-      'Work equipment',
-      'Light spare parts',
-      'Operational support equipment',
-      'Other routine vessel requirements',
+      {
+        icon: Boxes,
+        text: 'Office stationery',
+      },
+      {
+        icon: Boxes,
+        text: 'Cleaning supplies',
+      },
+      {
+        icon: Boxes,
+        text: 'Work equipment',
+      },
+      {
+        icon: PackageCheck,
+        text: 'Light spare parts',
+      },
+      {
+        icon: PackageCheck,
+        text: 'Operational support equipment',
+      },
+      {
+        icon: Boxes,
+        text: 'Other routine vessel requirements',
+      },
     ],
   },
   {
     slug: 'crew-workwear-uniform-supply',
-    pageRoute: '/services/service-7',
+    pageRoute: '/service-7',
     icon: Shirt,
     title: 'Crew Workwear & Uniform Supply',
     shortTitle: 'Crew Workwear',
@@ -194,17 +316,35 @@ export const services: ServiceItem[] = [
     pageNote:
       'Useful for operators who need a consistent look and practical wear for crew members.',
     points: [
-      'Daily crew uniforms',
-      'Workwear and coveralls',
-      'Safety vests',
-      'Jackets and outerwear',
-      'Crew identification items',
-      'Custom specifications and materials',
+      {
+        icon: Shirt,
+        text: 'Daily crew uniforms',
+      },
+      {
+        icon: Shirt,
+        text: 'Workwear and coveralls',
+      },
+      {
+        icon: Shirt,
+        text: 'Safety vests',
+      },
+      {
+        icon: Shirt,
+        text: 'Jackets and outerwear',
+      },
+      {
+        icon: Users,
+        text: 'Crew identification items',
+      },
+      {
+        icon: Shirt,
+        text: 'Custom specifications and materials',
+      },
     ],
   },
   {
     slug: 'husbandry-services',
-    pageRoute: '/services/service-8',
+    pageRoute: '/service-8',
     icon: UsersRound,
     title: 'Husbandry Services',
     shortTitle: 'Husbandry',
@@ -219,12 +359,30 @@ export const services: ServiceItem[] = [
     pageNote:
       'Best for port calls where crew movements, documentation, and support tasks need careful handling.',
     points: [
-      'Crew change arrangements',
-      'Crew transportation',
-      'Hotel reservations',
-      'Medical assistance',
-      'Visa and immigration documentation',
-      'Document and spare parts delivery',
+      {
+        icon: Users,
+        text: 'Crew change arrangements',
+      },
+      {
+        icon: Users,
+        text: 'Crew transportation',
+      },
+      {
+        icon: PackageCheck,
+        text: 'Hotel reservations',
+      },
+      {
+        icon: PackageCheck,
+        text: 'Medical assistance',
+      },
+      {
+        icon: FileCheck,
+        text: 'Visa and immigration documentation',
+      },
+      {
+        icon: PackageCheck,
+        text: 'Document and spare parts delivery',
+      },
     ],
   },
 ]

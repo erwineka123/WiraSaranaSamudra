@@ -248,11 +248,11 @@ export default function HomePage() {
           ================================================== */}
           <div className="mt-4 grid gap-3 rounded-[22px] border border-border/70 bg-white/70 p-4 backdrop-blur-md sm:grid-cols-[1fr_auto] sm:items-end">
             <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--brand)]">
+              <p className="text-[15px] font-semibold uppercase tracking-[0.22em] text-[var(--brand)]">
                 Wira Sarana Samudra
               </p>
 
-              <p className="mt-2 max-w-md text-sm leading-relaxed text-muted-foreground">
+              <p className="mt-2 max-w-md text-base leading-relaxed text-muted-foreground">
                 We support ship agency, cargo supervision, vessel supplies,
                 bunkering, running store, and husbandry requirements through
                 one coordinated team.
@@ -324,7 +324,7 @@ export default function HomePage() {
                         <h3 className="mt-5 font-serif text-xl font-semibold text-foreground">
                           {item.title}
                         </h3>
-                        <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                        <p className="mt-3 text-base leading-relaxed text-muted-foreground">
                           {item.description}
                         </p>
                       </div>
@@ -382,7 +382,7 @@ export default function HomePage() {
                     <h3 className="mt-7 font-serif text-2xl font-semibold text-foreground">
                       {service.title}
                     </h3>
-                    <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                    <p className="mt-4 text-base leading-relaxed text-muted-foreground">
                       {service.description}
                     </p>
 
@@ -426,13 +426,13 @@ export default function HomePage() {
               {workingStyle.map((item, index) => (
                 <Reveal key={item.title} delay={index * 100} className="h-full">
                   <div className="rounded-[28px] border border-white/10 bg-white/6 p-6">
-                    <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent">
+                    <p className="text-base font-semibold uppercase tracking-[0.2em] text-accent">
                       0{index + 1}
                     </p>
                     <h3 className="mt-4 font-serif text-2xl font-semibold">
                       {item.title}
                     </h3>
-                    <p className="mt-3 text-sm leading-relaxed text-primary-foreground/68">
+                    <p className="mt-3 text-base leading-relaxed text-primary-foreground/68">
                       {item.description}
                     </p>
                   </div>

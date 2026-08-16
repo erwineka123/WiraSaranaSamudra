@@ -8,9 +8,9 @@ type SiteLogoProps = {
 
 export function SiteLogo({ className, priority = false }: SiteLogoProps) {
   return (
-    <span className={cn('relative block h-10 w-[500px] sm:h-11 sm:w-[250px]', className)}>
+    <span className={cn('relative block h-10 w-[220px] sm:h-11 sm:w-[220px]', className)}>
       <Image
-        src="/images/logo.jpeg"
+        src="/images/logo.png"
         alt="Wira Sarana Samudra Logo"
         fill
         priority={priority}

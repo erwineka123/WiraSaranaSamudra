@@ -79,7 +79,7 @@ export function ContactInquiryForm() {
     >
       <div className="grid gap-5 sm:grid-cols-2">
         <div className="sm:col-span-2">
-          <label htmlFor="name" className="mb-2 block text-sm font-semibold text-foreground">
+          <label htmlFor="name" className="mb-2 block text-base font-semibold text-foreground">
             Name
           </label>
           <input
@@ -90,12 +90,12 @@ export function ContactInquiryForm() {
             onChange={(event) => updateField('name', event.target.value)}
             placeholder="Your full name"
             required
-            className="h-13 w-full rounded-[20px] border border-border/80 bg-background/80 px-4 text-sm text-foreground outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/10"
+            className="h-13 w-full rounded-[20px] border border-border/80 bg-background/80 px-4 text-base text-foreground outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/10"
           />
         </div>
 
         <div>
-          <label htmlFor="company" className="mb-2 block text-sm font-semibold text-foreground">
+          <label htmlFor="company" className="mb-2 block text-base font-semibold text-foreground">
             Company
           </label>
           <input
@@ -105,12 +105,12 @@ export function ContactInquiryForm() {
             value={form.company}
             onChange={(event) => updateField('company', event.target.value)}
             placeholder="Company name"
-            className="h-13 w-full rounded-[20px] border border-border/80 bg-background/80 px-4 text-sm text-foreground outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/10"
+            className="h-13 w-full rounded-[20px] border border-border/80 bg-background/80 px-4 text-base text-foreground outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/10"
           />
         </div>
 
         <div>
-          <label htmlFor="email" className="mb-2 block text-sm font-semibold text-foreground">
+          <label htmlFor="email" className="mb-2 block text-base font-semibold text-foreground">
             Email
           </label>
           <input
@@ -121,12 +121,12 @@ export function ContactInquiryForm() {
             onChange={(event) => updateField('email', event.target.value)}
             placeholder="name@company.com"
             required
-            className="h-13 w-full rounded-[20px] border border-border/80 bg-background/80 px-4 text-sm text-foreground outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/10"
+            className="h-13 w-full rounded-[20px] border border-border/80 bg-background/80 px-4 text-base text-foreground outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/10"
           />
         </div>
 
         <div className="sm:col-span-2">
-          <label htmlFor="phone" className="mb-2 block text-sm font-semibold text-foreground">
+          <label htmlFor="phone" className="mb-2 block text-base font-semibold text-foreground">
             Phone Number
           </label>
           <input
@@ -136,12 +136,12 @@ export function ContactInquiryForm() {
             value={form.phone}
             onChange={(event) => updateField('phone', event.target.value)}
             placeholder="+62"
-            className="h-13 w-full rounded-[20px] border border-border/80 bg-background/80 px-4 text-sm text-foreground outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/10"
+            className="h-13 w-full rounded-[20px] border border-border/80 bg-background/80 px-4 text-base text-foreground outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/10"
           />
         </div>
 
         <div className="sm:col-span-2">
-          <label htmlFor="message" className="mb-2 block text-sm font-semibold text-foreground">
+          <label htmlFor="message" className="mb-2 block text-base font-semibold text-foreground">
             Message
           </label>
           <textarea
@@ -152,7 +152,7 @@ export function ContactInquiryForm() {
             onChange={(event) => updateField('message', event.target.value)}
             placeholder="Tell us about your vessel, cargo, service requirement, ETA, or operational needs..."
             required
-            className="min-h-[160px] w-full resize-y rounded-[24px] border border-border/80 bg-background/80 px-4 py-3 text-sm text-foreground outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/10"
+            className="min-h-[160px] w-full resize-y rounded-[24px] border border-border/80 bg-background/80 px-4 py-3 text-base text-foreground outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/10"
           />
         </div>
       </div>
@@ -175,11 +175,11 @@ export function ContactInquiryForm() {
       </div>
 
       {showValidation && !isValid ? (
-        <p className="text-sm text-destructive">
+        <p className="text-base text-destructive">
           Please complete name, email, and message first.
         </p>
       ) : (
-        <p className="text-xs leading-relaxed text-muted-foreground">
+        <p className="text-base leading-relaxed text-muted-foreground">
           Use either email or WhatsApp and our team can continue the discussion
           from there.
         </p>

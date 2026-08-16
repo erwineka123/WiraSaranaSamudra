@@ -18,8 +18,8 @@ export function SiteFooter() {
       <div className="shell relative py-16 md:py-20">
         <div className="grid gap-12 lg:grid-cols-[1.35fr_0.65fr]">
           <div>
-            <SiteLogo className="h-12 w-[240px] sm:w-[270px]" />
-            <p className="mt-6 max-w-md text-sm leading-relaxed text-primary-foreground/72">
+            <SiteLogo className="h-9 w-[220px] sm:h-20 sm:w-[220px]" priority />
+            <p className="mt-6 max-w-md text-base leading-relaxed text-primary-foreground/72">
               PT Wira Sarana Samudra supports vessel, cargo, and crew operations
               through reliable maritime services, responsive coordination, and a
               practical execution mindset.
@@ -39,10 +39,10 @@ export function SiteFooter() {
             </div>
           </div>
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-[0.22em] text-primary-foreground/55">
+            <h3 className="text-base font-semibold uppercase tracking-[0.22em] text-primary-foreground/55">
               Contact
             </h3>
-            <ul className="mt-5 space-y-4 text-sm text-primary-foreground/72">
+            <ul className="mt-5 space-y-4 text-base text-primary-foreground/72">
               <li className="flex items-start gap-3">
                 <MapPin className="mt-0.5 size-4 shrink-0 text-accent" aria-hidden="true" />
                 <span>
@@ -72,7 +72,7 @@ export function SiteFooter() {
               </li>
               <li className="flex items-center gap-3">
                 <Clock3 className="size-4 shrink-0 text-accent" aria-hidden="true" />
-                <span>Monday - Friday, 09:00 - 17:00 WIB</span>
+                <span>Open 24 Hours</span>
               </li>
             </ul>
           </div>
