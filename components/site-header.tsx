@@ -54,7 +54,7 @@ export function SiteHeader() {
                 setServicesOpen(false)
               }}
             >
-              <SiteLogo className="h-9 w-[220px] sm:h-15 sm:w-[220px]" priority />
+              <SiteLogo className="h-9 w-[220px] sm:h-17   sm:w-[220px]" priority />
             </Link>
 
             <nav
