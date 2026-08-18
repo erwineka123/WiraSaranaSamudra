@@ -26,7 +26,7 @@ export function ClientImage({
     return (
       <div
         className={cn(
-          'flex h-full w-full items-center justify-center rounded-2xl border border-dashed border-border bg-muted/35 px-6 py-10 text-center text-base font-medium text-muted-foreground',
+          'flex h-full w-full items-center justify-center rounded-2xl border border-dashed border-border bg-muted/35 px-4 py-6 text-center text-sm font-medium text-muted-foreground',
           className,
         )}
       >
@@ -38,15 +38,20 @@ export function ClientImage({
   const src = `/images/${baseName}.${imageExtensions[index]}`
 
   return (
-    <div className={cn('relative h-full w-full', className)}>
+    <div
+      className={cn(
+        'relative flex h-full w-full items-center justify-center',
+        className,
+      )}
+    >
       <Image
         key={src}
         src={src}
         alt={alt}
-        fill
+        width={180}
+        height={80}
         priority={priority}
-        sizes="(max-width: 768px) 100vw, 420px"
-        className="object-contain"
+        className="max-h-[65px] max-w-[150px] object-contain"
         onError={() => {
           if (index < imageExtensions.length - 1) {
             setIndex((current) => current + 1)

@@ -475,42 +475,40 @@ export default function HomePage() {
               </div>
             </Reveal>
 
-            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 xl:grid-cols-5">
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 xl:grid-cols-3">
   {clientLogos.map((client, index) => (
     <Reveal key={client} delay={index * 90} className="h-full">
       <div
         className="
-          flex h-[170px] flex-col
+          flex h-[145px] flex-col
           items-center justify-between
-          rounded-[28px]
+          rounded-[24px]
           border border-white/72
           bg-white/86
-          px-4 py-5
+          px-3 py-4
           shadow-[0_24px_70px_-48px_rgba(17,31,56,0.48)]
           backdrop-blur-sm
-          xl:h-[175px]
+          xl:h-[150px]
         "
       >
         {/* Logo */}
-        <div className="flex h-[85px] w-full items-center justify-center">
-          <div className="flex h-full w-full items-center justify-center">
-            <ClientImage
-              baseName={client}
-              alt={`Logo ${clientNames[client]}`}
-              priority={index === 0}
-            />
-          </div>
+        <div className="flex h-[75px] w-full items-center justify-center">
+          <ClientImage
+            baseName={client}
+            alt={`Logo ${clientNames[client]}`}
+            priority={index === 0}
+          />
         </div>
 
         {/* Nama Client */}
-        <div className="flex h-[48px] w-full items-center justify-center">
+        <div className="flex min-h-[38px] w-full items-center justify-center">
           <p
             className="
-              max-w-[190px]
+              max-w-[160px]
               text-center
-              text-[10px]
+              text-[9px]
               font-semibold
-              leading-[1.35]
+              leading-[1.3]
               tracking-[-0.01em]
               text-[#111f38]
             "
