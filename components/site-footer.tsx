@@ -1,5 +1,5 @@
-import Link from 'next/link'
-import { Anchor, ArrowUpRight, Clock3, Mail, MapPin, Phone } from 'lucide-react'
+import Image from 'next/image'
+import { Anchor, Clock3, Mail, MapPin, Phone } from 'lucide-react'
 import { SiteLogo } from '@/components/site-logo-footer'
 
 export function SiteFooter() {
@@ -13,73 +13,54 @@ export function SiteFooter() {
       "
     >
       {/* ========================================
-          BACKGROUND
+          FOOTER BACKGROUND IMAGE
           ======================================== */}
 
-      {/* Main radial navy gradient */}
-      <div
+      <Image
+        src="/images/footer-background.png"
+        alt=""
+        fill
+        priority
+        sizes="100vw"
         className="
-          pointer-events-none absolute inset-0
-          bg-[radial-gradient(circle_at_50%_0%,#174A9C_0%,#0D357C_30%,#092653_58%,#07172F_100%)]
+          pointer-events-none
+          absolute
+          inset-0
+          z-0
+          h-full
+          w-full
+          object-cover
+          object-center
         "
         aria-hidden="true"
       />
 
-      {/* Soft top blue glow */}
+      {/* ========================================
+          BACKGROUND OVERLAY
+          Keeps text readable while preserving
+          the original background design
+          ======================================== */}
+
       <div
         className="
-          pointer-events-none absolute
-          left-1/2 top-[-180px]
-          size-[620px]
-          -translate-x-1/2
-          rounded-full
-          bg-[#1B55A5]/20
-          blur-[120px]
+          pointer-events-none
+          absolute
+          inset-0
+          z-[1]
+          bg-[#06172F]/10
         "
         aria-hidden="true"
       />
 
-      {/* Right subtle glow */}
+      {/* Subtle top highlight */}
       <div
         className="
-          pointer-events-none absolute
-          -right-40 top-20
-          size-[420px]
-          rounded-full
-          bg-[#174A9C]/15
-          blur-[110px]
-        "
-        aria-hidden="true"
-      />
-
-      {/* Left subtle glow */}
-      <div
-        className="
-          pointer-events-none absolute
-          -left-40 bottom-20
-          size-[400px]
-          rounded-full
-          bg-[#0D357C]/20
-          blur-[110px]
-        "
-        aria-hidden="true"
-      />
-
-      {/* Very subtle grid texture */}
-      <div
-        className="
-          pointer-events-none absolute inset-0
-          opacity-[0.018]
-          [background-image:linear-gradient(135deg,white_1px,transparent_1px)]
-          [background-size:42px_42px]
-        "
-        aria-hidden="true"
-      />
-
-      {/* Top highlight */}
-      <div
-        className="
-          pointer-events-none absolute inset-x-0 top-0 h-px
+          pointer-events-none
+          absolute
+          inset-x-0
+          top-0
+          z-[2]
+          h-px
           bg-gradient-to-r
           from-transparent
           via-white/25
@@ -92,9 +73,9 @@ export function SiteFooter() {
           CONTENT
           ======================================== */}
 
-      <div className="shell relative py-16 md:py-20">
+      <div className="shell relative z-10 py-16 md:py-20">
         <div className="grid gap-12 lg:grid-cols-[1.35fr_0.65fr]">
-          
+
           {/* ====================================
               COMPANY INFORMATION
               ==================================== */}
@@ -107,9 +88,11 @@ export function SiteFooter() {
 
             <p
               className="
-                mt-6 max-w-md
-                text-base leading-relaxed
-                text-primary-foreground/72
+                mt-6
+                max-w-md
+                text-base
+                leading-relaxed
+                text-primary-foreground/75
               "
             >
               PT Wira Sarana Samudra supports vessel, cargo, and crew operations
@@ -117,23 +100,32 @@ export function SiteFooter() {
               practical execution mindset.
             </p>
 
-            {/* Badges */}
+            {/* ====================================
+                COMPANY BADGES
+                ==================================== */}
+
             <div className="mt-8 flex flex-wrap gap-3">
-              
+
               {/* SIUPKK */}
               <span
                 className="
-                  inline-flex items-center gap-2
+                  inline-flex
+                  items-center
+                  gap-2
                   rounded-full
-                  border border-white/10
-                  bg-white/[0.055]
-                  px-4 py-2
-                  text-xs font-medium
-                  text-primary-foreground/82
+                  border
+                  border-white/15
+                  bg-[#07172F]/35
+                  px-4
+                  py-2
+                  text-xs
+                  font-medium
+                  text-primary-foreground/85
                   backdrop-blur-sm
-                  transition-colors
-                  hover:border-white/20
-                  hover:bg-white/[0.08]
+                  transition-all
+                  duration-300
+                  hover:border-white/25
+                  hover:bg-[#07172F]/50
                 "
               >
                 <Anchor
@@ -148,16 +140,21 @@ export function SiteFooter() {
               <span
                 className="
                   inline-flex
+                  items-center
                   rounded-full
-                  border border-white/10
-                  bg-white/[0.055]
-                  px-4 py-2
-                  text-xs font-medium
-                  text-primary-foreground/82
+                  border
+                  border-white/15
+                  bg-[#07172F]/35
+                  px-4
+                  py-2
+                  text-xs
+                  font-medium
+                  text-primary-foreground/85
                   backdrop-blur-sm
-                  transition-colors
-                  hover:border-white/20
-                  hover:bg-white/[0.08]
+                  transition-all
+                  duration-300
+                  hover:border-white/25
+                  hover:bg-[#07172F]/50
                 "
               >
                 Jakarta Based
@@ -167,16 +164,21 @@ export function SiteFooter() {
               <span
                 className="
                   inline-flex
+                  items-center
                   rounded-full
-                  border border-white/10
-                  bg-white/[0.055]
-                  px-4 py-2
-                  text-xs font-medium
-                  text-primary-foreground/82
+                  border
+                  border-white/15
+                  bg-[#07172F]/35
+                  px-4
+                  py-2
+                  text-xs
+                  font-medium
+                  text-primary-foreground/85
                   backdrop-blur-sm
-                  transition-colors
-                  hover:border-white/20
-                  hover:bg-white/[0.08]
+                  transition-all
+                  duration-300
+                  hover:border-white/25
+                  hover:bg-[#07172F]/50
                 "
               >
                 24/7 Coordination
@@ -195,7 +197,7 @@ export function SiteFooter() {
                 font-semibold
                 uppercase
                 tracking-[0.22em]
-                text-primary-foreground/55
+                text-primary-foreground/70
               "
             >
               Contact
@@ -206,9 +208,10 @@ export function SiteFooter() {
                 mt-5
                 space-y-4
                 text-base
-                text-primary-foreground/72
+                text-primary-foreground/75
               "
             >
+
               {/* Address */}
               <li className="flex items-start gap-3">
                 <MapPin
@@ -244,6 +247,7 @@ export function SiteFooter() {
                   rel="noopener noreferrer"
                   className="
                     transition-colors
+                    duration-200
                     hover:text-white
                   "
                 >
@@ -266,6 +270,7 @@ export function SiteFooter() {
                   href="mailto:info.wss@wirasarana.com"
                   className="
                     transition-colors
+                    duration-200
                     hover:text-white
                   "
                 >
@@ -291,21 +296,24 @@ export function SiteFooter() {
         </div>
 
         {/* ========================================
-            DIVIDER
+            BOTTOM DIVIDER
             ======================================== */}
 
         <div
           className="
             mt-14
-            border-t border-white/10
+            border-t
+            border-white/15
             pt-6
           "
         >
           <div
             className="
-              flex flex-col gap-3
+              flex
+              flex-col
+              gap-3
               text-xs
-              text-primary-foreground/48
+              text-primary-foreground/55
               sm:flex-row
               sm:items-center
               sm:justify-between
@@ -320,78 +328,6 @@ export function SiteFooter() {
             </p>
           </div>
         </div>
-      </div>
-
-      {/* ========================================
-          OCEAN WAVE
-          ======================================== */}
-
-      <div
-        className="
-          pointer-events-none
-          absolute
-          inset-x-0
-          bottom-0
-          z-0
-          h-40
-          overflow-hidden
-          opacity-[0.055]
-        "
-        aria-hidden="true"
-      >
-        <svg
-          viewBox="0 0 1440 320"
-          className="absolute bottom-[-20px] h-48 w-full"
-          preserveAspectRatio="none"
-        >
-          <path
-            fill="currentColor"
-            d="
-              M0,224
-              C120,180 220,150 360,208
-              C500,266 580,292 720,220
-              C860,148 940,140 1080,196
-              C1220,252 1320,258 1440,188
-              L1440,320
-              L0,320
-              Z
-            "
-          />
-        </svg>
-      </div>
-
-      {/* Secondary wave */}
-      <div
-        className="
-          pointer-events-none
-          absolute
-          inset-x-0
-          bottom-0
-          z-0
-          h-28
-          overflow-hidden
-          opacity-[0.025]
-        "
-        aria-hidden="true"
-      >
-        <svg
-          viewBox="0 0 1440 320"
-          className="absolute bottom-[-45px] h-40 w-full"
-          preserveAspectRatio="none"
-        >
-          <path
-            fill="currentColor"
-            d="
-              M0,250
-              C180,180 300,180 480,240
-              C660,300 780,280 920,220
-              C1060,160 1190,180 1440,250
-              L1440,320
-              L0,320
-              Z
-            "
-          />
-        </svg>
       </div>
     </footer>
   )

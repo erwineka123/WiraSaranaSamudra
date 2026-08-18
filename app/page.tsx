@@ -96,174 +96,181 @@ const workingStyle = [
 ]
 
 const clientLogos = ['client-1', 'client-2', 'client-3', 'client-4', 'client-5']
+const clientNames: Record<string, string> = {
+  'client-1': 'SUS PCL',
+  'client-2': 'NYK SHIPMANAGEMENT',
+  'client-3': 'PERTAMINA INTERNATIONAL SHIPPING',
+  'client-4': 'SINGAPORE STRAIT SHIPMANAGER',
+  'client-5': 'SEA CHEFS',
+}
 
 export default function HomePage() {
   return (
     <main>
       <section className="relative isolate overflow-hidden bg-[#f7f8fc] py-16 md:py-24 lg:py-28">
-  {/* =====================================================
+        {/* =====================================================
       BACKGROUND IMAGE
   ====================================================== */}
-  <div
-    className="pointer-events-none absolute inset-0 -z-10 overflow-hidden"
-    aria-hidden="true"
-  >
-    <Image
-      src="/images/background-home.png"
-      alt=""
-      fill
-      priority
-      className="object-cover object-center opacity-[100%]"
-      sizes="100vw"
-    />
+        <div
+          className="pointer-events-none absolute inset-0 -z-10 overflow-hidden"
+          aria-hidden="true"
+        >
+          <Image
+            src="/images/background-home.png"
+            alt=""
+            fill
+            priority
+            className="object-cover object-center opacity-[100%]"
+            sizes="100vw"
+          />
 
-    {/* Main soft overlay */}
-    <div className="absolute inset-0 bg-gradient-to-r from-[#f7f8fc]/95 via-[#f7f8fc]/82 to-[#f7f8fc]/55" />
+          {/* Main soft overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#f7f8fc]/95 via-[#f7f8fc]/82 to-[#f7f8fc]/55" />
 
-    {/* Bottom fade */}
-    <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#f7f8fc] via-transparent to-transparent" />
+          {/* Bottom fade */}
+          <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#f7f8fc] via-transparent to-transparent" />
 
-    {/* Subtle brand tint */}
-    <div className="absolute -right-40 top-1/4 size-[520px] rounded-full bg-[var(--brand)]/8 blur-[120px]" />
-  </div>
+          {/* Subtle brand tint */}
+          <div className="absolute -right-40 top-1/4 size-[520px] rounded-full bg-[var(--brand)]/8 blur-[120px]" />
+        </div>
 
-  {/* =====================================================
+        {/* =====================================================
       CONTENT
   ====================================================== */}
-  <div className="shell relative">
-    <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+        <div className="shell relative">
+          <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
 
-      {/* =================================================
+            {/* =================================================
           LEFT CONTENT
       ================================================== */}
-      <Reveal>
-        <div className="max-w-3xl">
+            <Reveal>
+              <div className="max-w-3xl">
 
-          {/* Small eyebrow */}
-          <div className="flex items-center gap-3">
-            <span className="h-px w-10 bg-accent" />
+                {/* Small eyebrow */}
+                <div className="flex items-center gap-3">
+                  <span className="h-px w-10 bg-accent" />
 
-            <span className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--brand)]">
-              Maritime Support & Services
-            </span>
-          </div>
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--brand)]">
+                    Maritime Support & Services
+                  </span>
+                </div>
 
-          <h1 className="headline mt-6 text-foreground">
-            Reliable maritime support for smoother vessel, cargo, and crew
-            operations.
-          </h1>
+                <h1 className="headline mt-6 text-foreground">
+                  Reliable maritime support for smoother vessel, cargo, and crew
+                  operations.
+                </h1>
 
-          <p className="section-copy mt-6 max-w-xl">
-            PT Wira Sarana Samudra helps ship owners, operators, and cargo
-            stakeholders move with better coordination, dependable service,
-            and a clean operational rhythm from port arrival to departure.
-          </p>
+                <p className="section-copy mt-6 max-w-xl">
+                  PT Wira Sarana Samudra helps ship owners, operators, and cargo
+                  stakeholders move with better coordination, dependable service,
+                  and a clean operational rhythm from port arrival to departure.
+                </p>
 
-          {/* CTA */}
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <Button
-              render={<Link href="/about" />}
-              nativeButton={false}
-              size="lg"
-            >
-              About WSS
-              <ArrowRight className="size-4" aria-hidden="true" />
-            </Button>
-          </div>
+                {/* CTA */}
+                <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+                  <Button
+                    render={<Link href="/about" />}
+                    nativeButton={false}
+                    size="lg"
+                  >
+                    About WSS
+                    <ArrowRight className="size-4" aria-hidden="true" />
+                  </Button>
+                </div>
 
-          {/* Trust badges */}
-          <div className="mt-10 flex flex-wrap gap-3">
-            <span className="rounded-full border border-border/80 bg-white/72 px-4 py-2 text-xs font-medium text-foreground shadow-sm backdrop-blur-sm">
-              SIUPKK Registered
-            </span>
+                {/* Trust badges */}
+                <div className="mt-10 flex flex-wrap gap-3">
+                  <span className="rounded-full border border-border/80 bg-white/72 px-4 py-2 text-xs font-medium text-foreground shadow-sm backdrop-blur-sm">
+                    SIUPKK Registered
+                  </span>
 
-            <span className="rounded-full border border-border/80 bg-white/72 px-4 py-2 text-xs font-medium text-foreground shadow-sm backdrop-blur-sm">
-              Jakarta Based
-            </span>
+                  <span className="rounded-full border border-border/80 bg-white/72 px-4 py-2 text-xs font-medium text-foreground shadow-sm backdrop-blur-sm">
+                    Jakarta Based
+                  </span>
 
-            <span className="rounded-full border border-border/80 bg-white/72 px-4 py-2 text-xs font-medium text-foreground shadow-sm backdrop-blur-sm">
-              24/7 Operational Support
-            </span>
-          </div>
-        </div>
-      </Reveal>
+                  <span className="rounded-full border border-border/80 bg-white/72 px-4 py-2 text-xs font-medium text-foreground shadow-sm backdrop-blur-sm">
+                    24/7 Operational Support
+                  </span>
+                </div>
+              </div>
+            </Reveal>
 
-      {/* =================================================
+            {/* =================================================
           RIGHT HERO IMAGE
       ================================================== */}
-      <Reveal
-        className="relative lg:pl-6"
-        direction="left"
-        delay={120}
-      >
-        {/* Decorative glow */}
-        <div
-          className="pointer-events-none absolute -left-8 top-10 hidden size-32 rounded-full bg-[var(--brand)]/14 blur-3xl md:block"
-          aria-hidden="true"
-        />
+            <Reveal
+              className="relative lg:pl-6"
+              direction="left"
+              delay={120}
+            >
+              {/* Decorative glow */}
+              <div
+                className="pointer-events-none absolute -left-8 top-10 hidden size-32 rounded-full bg-[var(--brand)]/14 blur-3xl md:block"
+                aria-hidden="true"
+              />
 
-        <div
-          className="pointer-events-none absolute -right-8 bottom-8 hidden size-28 rounded-full bg-accent/16 blur-3xl md:block"
-          aria-hidden="true"
-        />
+              <div
+                className="pointer-events-none absolute -right-8 bottom-8 hidden size-28 rounded-full bg-accent/16 blur-3xl md:block"
+                aria-hidden="true"
+              />
 
-        {/* Main image container */}
-        <div className="relative rounded-[32px] border border-white/80 bg-white/70 p-4 shadow-[0_32px_90px_-44px_rgba(17,31,56,0.52)] backdrop-blur-xl sm:p-5">
+              {/* Main image container */}
+              <div className="relative rounded-[32px] border border-white/80 bg-white/70 p-4 shadow-[0_32px_90px_-44px_rgba(17,31,56,0.52)] backdrop-blur-xl sm:p-5">
 
-          <div className="relative aspect-[16/10] overflow-hidden rounded-[26px] bg-primary lg:aspect-[16/9]">
+                <div className="relative aspect-[16/10] overflow-hidden rounded-[26px] bg-primary lg:aspect-[16/9]">
 
-            <Image
-              src="/images/hero.png"
-              alt="Commercial vessel at port"
-              fill
-              priority
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 44vw"
-            />
+                  <Image
+                    src="/images/hero.png"
+                    alt="Commercial vessel at port"
+                    fill
+                    priority
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 44vw"
+                  />
 
-            {/* Image overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/25 to-transparent" />
+                  {/* Image overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/25 to-transparent" />
 
-            {/* Location */}
-            <div className="absolute left-5 top-5 rounded-full border border-white/18 bg-white/10 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-white/88 backdrop-blur-sm">
-              Jakarta - Indonesia
-            </div>
+                  {/* Location */}
+                  <div className="absolute left-5 top-5 rounded-full border border-white/18 bg-white/10 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-white/88 backdrop-blur-sm">
+                    Jakarta - Indonesia
+                  </div>
 
-            {/* Image content */}
-            <div className="absolute inset-x-5 bottom-5">
-              <div className="max-w-sm">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/60">
-                  Trusted maritime partner
-                </p>
+                  {/* Image content */}
+                  <div className="absolute inset-x-5 bottom-5">
+                    <div className="max-w-sm">
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/60">
+                        Trusted maritime partner
+                      </p>
 
-                <p className="mt-2 max-w-[18ch] font-serif text-xl font-semibold leading-tight text-white sm:text-2xl">
-                  Integrated support tailored around daily port operations.
-                </p>
-              </div>
-            </div>
-          </div>
+                      <p className="mt-2 max-w-[18ch] font-serif text-xl font-semibold leading-tight text-white sm:text-2xl">
+                        Integrated support tailored around daily port operations.
+                      </p>
+                    </div>
+                  </div>
+                </div>
 
-          {/* =================================================
+                {/* =================================================
               INFO CARD BELOW IMAGE
           ================================================== */}
-          <div className="mt-4 grid gap-3 rounded-[22px] border border-border/70 bg-white/70 p-4 backdrop-blur-md sm:grid-cols-[1fr_auto] sm:items-end">
-            <div>
-              <p className="text-[15px] font-semibold uppercase tracking-[0.22em] text-[var(--brand)]">
-                Wira Sarana Samudra
-              </p>
+                <div className="mt-4 grid gap-3 rounded-[22px] border border-border/70 bg-white/70 p-4 backdrop-blur-md sm:grid-cols-[1fr_auto] sm:items-end">
+                  <div>
+                    <p className="text-[15px] font-semibold uppercase tracking-[0.22em] text-[var(--brand)]">
+                      Wira Sarana Samudra
+                    </p>
 
-              <p className="mt-2 max-w-md text-base leading-relaxed text-muted-foreground">
-                We support ship agency, cargo supervision, vessel supplies,
-                bunkering, running store, and husbandry requirements through
-                one coordinated team.
-              </p>
-            </div>
+                    <p className="mt-2 max-w-md text-base leading-relaxed text-muted-foreground">
+                      We support ship agency, cargo supervision, vessel supplies,
+                      bunkering, running store, and husbandry requirements through
+                      one coordinated team.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </Reveal>
           </div>
         </div>
-      </Reveal>
-    </div>
-  </div>
-</section>
+      </section>
 
       <section className="section-band py-20 md:py-28 bg-grey-50">
         <div className="shell">
@@ -469,18 +476,52 @@ export default function HomePage() {
             </Reveal>
 
             <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 xl:grid-cols-5">
-              {clientLogos.map((client, index) => (
-                <Reveal key={client} delay={index * 90} className="h-full">
-                  <div className="flex h-[108px] items-center justify-center rounded-[28px] border border-white/72 bg-white/86 p-5 shadow-[0_24px_70px_-48px_rgba(17,31,56,0.48)] backdrop-blur-sm xl:h-[120px]">
-                    <ClientImage
-                      baseName={client}
-                      alt={`Logo ${client.replace('-', ' ')}`}
-                      priority={index === 0}
-                    />
-                  </div>
-                </Reveal>
-              ))}
-            </div>
+  {clientLogos.map((client, index) => (
+    <Reveal key={client} delay={index * 90} className="h-full">
+      <div
+        className="
+          flex h-[170px] flex-col
+          items-center justify-between
+          rounded-[28px]
+          border border-white/72
+          bg-white/86
+          px-4 py-5
+          shadow-[0_24px_70px_-48px_rgba(17,31,56,0.48)]
+          backdrop-blur-sm
+          xl:h-[175px]
+        "
+      >
+        {/* Logo */}
+        <div className="flex h-[85px] w-full items-center justify-center">
+          <div className="flex h-full w-full items-center justify-center">
+            <ClientImage
+              baseName={client}
+              alt={`Logo ${clientNames[client]}`}
+              priority={index === 0}
+            />
+          </div>
+        </div>
+
+        {/* Nama Client */}
+        <div className="flex h-[48px] w-full items-center justify-center">
+          <p
+            className="
+              max-w-[190px]
+              text-center
+              text-[10px]
+              font-semibold
+              leading-[1.35]
+              tracking-[-0.01em]
+              text-[#111f38]
+            "
+          >
+            {clientNames[client]}
+          </p>
+        </div>
+      </div>
+    </Reveal>
+  ))}
+</div>
           </div>
         </div>
       </section>
