@@ -48,6 +48,25 @@ const whyWss = [
   },
 ]
 
+const whyWssCardThemes = [
+  {
+    header: 'bg-[linear-gradient(135deg,#146cff_0%,#0b1f3a_100%)]',
+    icon: 'bg-white/95 text-[var(--brand)]',
+  },
+  {
+    header: 'bg-[linear-gradient(135deg,#ff7a2f_0%,#d9450c_100%)]',
+    icon: 'bg-white/95 text-[var(--signal)]',
+  },
+  {
+    header: 'bg-[linear-gradient(135deg,#ff7a2f_0%,#d9450c_100%)]',
+    icon: 'bg-white/95 text-[var(--signal)]',
+  },
+  {
+    header: 'bg-[linear-gradient(135deg,#146cff_0%,#0b1f3a_100%)]',
+    icon: 'bg-white/95 text-[var(--brand)]',
+  },
+]
+
 const companyLegalities = [
   {
     label: 'Company Name',
@@ -60,7 +79,7 @@ const companyLegalities = [
   },
   {
     label: 'Telephone',
-    value: '+62 21 8378 5852',
+    value: '+62 821 2816 7689',
   },
   {
     label: 'Business License',
@@ -98,14 +117,18 @@ export default function AboutPage() {
           />
 
           {/* Soft overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#f7f8fa]/95 via-[#f7f8fa]/85 to-[#f7f8fa]/65" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#f5faff]/95 via-[#f5faff]/85 to-[#f5faff]/65" />
 
           {/* Bottom fade */}
-          <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#f7f8fa] via-transparent to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#f5faff] via-transparent to-transparent" />
 
           {/* Subtle brand glow */}
           <div
             className="absolute -right-40 top-1/4 size-[520px] rounded-full bg-[var(--brand)]/8 blur-[120px]"
+            aria-hidden="true"
+          />
+          <div
+            className="absolute -bottom-32 -left-20 size-80 rounded-full bg-[var(--signal)]/10 blur-[110px]"
             aria-hidden="true"
           />
         </div>
@@ -202,7 +225,7 @@ export default function AboutPage() {
         <div className="shell">
           <Reveal className="max-w-2xl">
             <span
-              className="eyebrow border-[rgba(74,78,161,0.12)] bg-white/72 text-[var(--brand)]"
+              className="eyebrow border-[rgba(22,118,229,0.18)] bg-white/72 text-[var(--brand)]"
             >
               <Anchor className="size-3.5 text-accent" aria-hidden="true" />
               Why WSS
@@ -219,19 +242,32 @@ export default function AboutPage() {
           <div className="mt-12 grid gap-6 md:grid-cols-2">
             {whyWss.map((item, index) => {
               const Icon = item.icon
+              const theme = whyWssCardThemes[index]
 
               return (
                 <Reveal key={item.title} delay={index * 90} className="h-full">
-                  <article className="rounded-[32px] border border-white/72 bg-white/86 p-7 shadow-[0_28px_80px_-48px_rgba(17,31,56,0.48)] backdrop-blur-sm">
-                    <span className="flex size-12 items-center justify-center rounded-full bg-secondary text-primary">
-                      <Icon className="size-5" aria-hidden="true" />
-                    </span>
-                    <h3 className="mt-6 font-serif text-2xl font-semibold text-foreground">
-                      {item.title}
-                    </h3>
-                    <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-                      {item.description}
-                    </p>
+                  <article className="relative h-full overflow-hidden rounded-[32px] border border-white/82 bg-white/92 p-7 shadow-[0_28px_80px_-48px_rgba(11,31,58,0.42)] transition-all duration-300 hover:-translate-y-1 hover:border-[var(--brand)]/35 hover:shadow-[0_36px_85px_-42px_rgba(11,31,58,0.52)]">
+                    <div
+                      className={`pointer-events-none absolute inset-x-0 top-0 h-28 ${theme.header}`}
+                      aria-hidden="true"
+                    >
+                      <span className="absolute right-7 top-4 font-serif text-6xl font-semibold tracking-tight text-white/28">
+                        {String(index + 1).padStart(2, '0')}
+                      </span>
+                      <span className="absolute -right-8 -bottom-16 size-40 rounded-full border border-white/18" />
+                    </div>
+
+                    <div className="relative pt-14">
+                      <span className={`flex size-12 items-center justify-center rounded-full ${theme.icon}`}>
+                        <Icon className="size-5" aria-hidden="true" />
+                      </span>
+                      <h3 className="mt-6 font-serif text-2xl font-semibold text-foreground">
+                        {item.title}
+                      </h3>
+                      <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+                        {item.description}
+                      </p>
+                    </div>
                   </article>
                 </Reveal>
               )
@@ -270,7 +306,7 @@ export default function AboutPage() {
 
             <Reveal className="max-w-2xl" delay={120}>
               <span
-                className="eyebrow border-[rgba(74,78,161,0.12)] bg-white/72 text-[var(--brand)]"
+                className="eyebrow border-[rgba(22,118,229,0.18)] bg-white/72 text-[var(--brand)]"
               >
                 <Award className="size-3.5 text-accent" aria-hidden="true" />
                 Our Experience
@@ -316,7 +352,7 @@ export default function AboutPage() {
         <div className="shell">
           <div className="grid gap-6 lg:grid-cols-2">
             <Reveal className="h-full">
-              <div className="h-full rounded-[34px] bg-primary p-8 text-primary-foreground shadow-[0_34px_90px_-48px_rgba(17,31,56,0.72)] md:p-10">
+              <div className="section-navy-accent h-full rounded-[34px] p-8 text-primary-foreground shadow-[0_34px_90px_-48px_rgba(17,31,56,0.72)] md:p-10">
                 <span className="flex size-12 items-center justify-center rounded-full bg-white/8 text-accent">
                   <Eye className="size-5" aria-hidden="true" />
                 </span>
@@ -329,7 +365,7 @@ export default function AboutPage() {
             </Reveal>
 
             <Reveal className="h-full" delay={120}>
-              <div className="h-full rounded-[34px] border border-white/72 bg-white/86 p-8 shadow-[0_28px_80px_-48px_rgba(17,31,56,0.48)] backdrop-blur-sm md:p-10">
+              <div className="section-ocean-card h-full rounded-[34px] border border-white/72 p-8 shadow-[0_28px_80px_-48px_rgba(17,31,56,0.48)] backdrop-blur-sm md:p-10">
                 <span className="flex size-12 items-center justify-center rounded-full bg-secondary text-primary">
                   <Flag className="size-5" aria-hidden="true" />
                 </span>
@@ -352,7 +388,7 @@ export default function AboutPage() {
           <Reveal className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-2xl">
               <span
-                className="eyebrow border-[rgba(74,78,161,0.12)] bg-white/72 text-[var(--brand)]"
+                className="eyebrow border-[rgba(22,118,229,0.18)] bg-white/72 text-[var(--brand)]"
               >
                 <Building2 className="size-3.5 text-accent" aria-hidden="true" />
                 Company Legalities

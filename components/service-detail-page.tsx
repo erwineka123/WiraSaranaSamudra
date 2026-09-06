@@ -10,6 +10,7 @@ import {
 
 import { Button } from '@/components/ui/button'
 import { Reveal } from '@/components/reveal'
+import { ServiceGallery } from '@/components/service-gallery'
 import type { ServiceItem } from '@/lib/services'
 
 type ServiceDetailPageProps = {
@@ -182,7 +183,7 @@ export function ServiceDetailPage({ service }: ServiceDetailPageProps) {
       {/* =========================================================
           SERVICE INTRO
       ========================================================= */}
-      <section className="bg-background py-20 md:py-28">
+      <section className="section-ocean py-20 md:py-28">
         <div className="shell">
           <div className="grid gap-14 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
             {/* Left */}
@@ -379,6 +380,14 @@ export function ServiceDetailPage({ service }: ServiceDetailPageProps) {
         </div>
       </section>
 
+      {service.gallery && (
+        <ServiceGallery
+          images={service.gallery}
+          fallbackImage={service.imagePath}
+          serviceName={service.shortTitle}
+        />
+      )}
+
       {/* =========================================================
           SERVICE FOCUS
       ========================================================= */}
@@ -456,7 +465,7 @@ export function ServiceDetailPage({ service }: ServiceDetailPageProps) {
       {/* =========================================================
           CTA
       ========================================================= */}
-      <section className="bg-primary py-20 text-primary-foreground md:py-28">
+      <section className="section-navy-accent py-20 text-primary-foreground md:py-28">
         <div className="shell">
           <Reveal>
             <div className="relative overflow-hidden border border-white/10 px-6 py-12 md:px-12 md:py-16">

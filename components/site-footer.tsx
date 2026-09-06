@@ -251,7 +251,7 @@ export function SiteFooter() {
                     hover:text-white
                   "
                 >
-                  +62 21 8378 5852
+                  +62 821 2816 7689
                 </a>
               </li>
 

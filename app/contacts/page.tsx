@@ -21,8 +21,8 @@ const contactDetails = [
   {
     icon: Phone,
     label: 'Phone / WhatsApp',
-    value: '+62 21 8378 5852',
-    href: 'https://wa.me/622183785852',
+    value: '+62 821 2816 7689',
+    href: 'https://wa.me/6282128167689',
   },
   {
     icon: Mail,
@@ -49,9 +49,9 @@ export default function ContactPage() {
       <section className="pb-18 pt-8 md:pb-24 md:pt-10">
         <div className="shell">
           <div className="grid gap-6 lg:grid-cols-[0.92fr_1.08fr]">
-            <Reveal className="rounded-[36px] bg-primary p-8 text-primary-foreground shadow-[0_34px_90px_-48px_rgba(17,31,56,0.72)] md:p-10 lg:p-12">
+            <Reveal className="section-navy-accent rounded-[36px] p-8 text-primary-foreground shadow-[0_34px_90px_-48px_rgba(17,31,56,0.72)] md:p-10 lg:p-12">
               <span className="eyebrow border-white/14 bg-white/7 text-primary-foreground/86">
-                <ShipWheel className="size-3.5 text-accent" aria-hidden="true" />
+                <ShipWheel className="size-3.5 text-[var(--signal)]" aria-hidden="true" />
                 Contact WSS
               </span>
 
@@ -100,7 +100,7 @@ export default function ContactPage() {
                     <Reveal key={item.label} delay={index * 90}>
                       <div className="rounded-[26px] border border-white/10 bg-white/6 p-5">
                         <div className="flex items-start gap-4">
-                          <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-white/10 text-accent">
+                          <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-white/10 text-[var(--signal)]">
                             <Icon className="size-5" aria-hidden="true" />
                           </span>
 
@@ -136,13 +136,13 @@ export default function ContactPage() {
             </Reveal>
 
             <Reveal
-              className="rounded-[36px] border border-white/72 bg-white/88 p-6 shadow-[0_32px_90px_-48px_rgba(17,31,56,0.48)] backdrop-blur-sm md:p-8 lg:p-10"
+              className="section-ocean-card rounded-[36px] border border-white/72 p-6 shadow-[0_32px_90px_-48px_rgba(17,31,56,0.48)] backdrop-blur-sm md:p-8 lg:p-10"
               direction="left"
               delay={140}
             >
               <div className="max-w-2xl">
                 <span
-                  className="eyebrow border-[rgba(74,78,161,0.12)] bg-secondary/70 text-[var(--brand)]"
+                  className="eyebrow border-[rgba(22,118,229,0.18)] bg-secondary/70 text-[var(--brand)]"
                 >
                   <Mail className="size-3.5 text-accent" aria-hidden="true" />
                   Start an Inquiry
@@ -170,7 +170,7 @@ export default function ContactPage() {
             <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
               <div className="max-w-xl">
                 <span
-                  className="eyebrow border-[rgba(74,78,161,0.12)] bg-secondary/70 text-[var(--brand)]"
+                  className="eyebrow border-[rgba(22,118,229,0.18)] bg-secondary/70 text-[var(--brand)]"
                 >
                   <Phone className="size-3.5 text-accent" aria-hidden="true" />
                   Helpful Details

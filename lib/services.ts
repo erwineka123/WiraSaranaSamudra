@@ -24,6 +24,12 @@ export type ServicePoint = {
   text: string
 }
 
+export type ServiceGalleryImage = {
+  src: string
+  alt: string
+  label: string
+}
+
 export type ServiceItem = {
   slug: string
   pageRoute: string
@@ -38,6 +44,7 @@ export type ServiceItem = {
   pageSummary: string
   pageNote: string
   points: ServicePoint[]
+  gallery?: ServiceGalleryImage[]
 }
 
 export const services: ServiceItem[] = [
@@ -143,6 +150,33 @@ export const services: ServiceItem[] = [
       'We coordinate tug and barge operations for heavy equipment, general cargo, and project movement with a practical approach to timing and safety.',
     pageNote:
       'Best suited for cargo movements that need reliable marine transport support and close operational follow-up.',
+    gallery: [
+      {
+        src: '/images/services/Activity-1.jpeg',
+        alt: 'Tug boat and barge on marine transport duty',
+        label: 'Marine transport operation',
+      },
+      {
+        src: '/images/services/Activity-2.jpeg',
+        alt: 'Tug boat supporting barge cargo movement',
+        label: 'Cargo movement support',
+      },
+      {
+        src: '/images/services/Activity-3.jpeg',
+        alt: 'Barge transport operation at sea',
+        label: 'Reliable project delivery',
+      },
+      {
+        src: '/images/services/Activity-4.jpeg',
+        alt: 'Tug boat and barge on marine transport duty',
+        label: 'Marine transport operation',
+      },
+      {
+        src: '/images/services/Activity-5.jpeg',
+        alt: 'Tug boat supporting barge cargo movement',
+        label: 'Cargo movement support',
+      }
+    ],
     points: [
       {
         icon: Ship,

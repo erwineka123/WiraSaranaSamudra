@@ -77,6 +77,21 @@ const services = [
   },
 ]
 
+const serviceCardThemes = [
+  {
+    header: 'bg-[linear-gradient(135deg,#146cff_0%,#0b1f3a_100%)]',
+    icon: 'bg-white/95 text-[var(--brand)]',
+  },
+  {
+    header: 'bg-[linear-gradient(135deg,#ff7a2f_0%,#d9450c_100%)]',
+    icon: 'bg-white/95 text-[var(--signal)]',
+  },
+  {
+    header: 'bg-[linear-gradient(135deg,#146cff_0%,#0b1f3a_100%)]',
+    icon: 'bg-white/95 text-[var(--brand)]',
+  },
+]
+
 const workingStyle = [
   {
     title: 'Coordinate early',
@@ -107,7 +122,7 @@ const clientNames: Record<string, string> = {
 export default function HomePage() {
   return (
     <main>
-      <section className="relative isolate overflow-hidden bg-[#f7f8fc] py-16 md:py-24 lg:py-28">
+      <section className="relative isolate overflow-hidden bg-[#f5faff] py-16 md:py-24 lg:py-28">
         {/* =====================================================
       BACKGROUND IMAGE
   ====================================================== */}
@@ -125,13 +140,14 @@ export default function HomePage() {
           />
 
           {/* Main soft overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#f7f8fc]/95 via-[#f7f8fc]/82 to-[#f7f8fc]/55" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#f5faff]/95 via-[#f5faff]/82 to-[#f5faff]/55" />
 
           {/* Bottom fade */}
-          <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#f7f8fc] via-transparent to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#f5faff] via-transparent to-transparent" />
 
           {/* Subtle brand tint */}
           <div className="absolute -right-40 top-1/4 size-[520px] rounded-full bg-[var(--brand)]/8 blur-[120px]" />
+          <div className="absolute -bottom-28 -left-24 size-80 rounded-full bg-[var(--signal)]/10 blur-[110px]" />
         </div>
 
         {/* =====================================================
@@ -210,7 +226,7 @@ export default function HomePage() {
               />
 
               <div
-                className="pointer-events-none absolute -right-8 bottom-8 hidden size-28 rounded-full bg-accent/16 blur-3xl md:block"
+                className="pointer-events-none absolute -right-8 bottom-8 hidden size-28 rounded-full bg-[var(--signal)]/18 blur-3xl md:block"
                 aria-hidden="true"
               />
 
@@ -344,12 +360,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section-band-alt py-20 md:py-28 bg-[#f4f5f7]">
+      <section className="section-band-alt bg-[#f3f9ff] py-20 md:py-28">
         <div className="shell">
           <Reveal className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-2xl">
               <span
-                className="eyebrow border-[rgba(74,78,161,0.12)] bg-white/72 text-[var(--brand)]"
+                className="eyebrow border-[rgba(22,118,229,0.18)] bg-white/72 text-[var(--brand)]"
               >
                 <Boxes className="size-3.5 text-accent" aria-hidden="true" />
                 Core Services
@@ -373,35 +389,43 @@ export default function HomePage() {
           <div className="mt-12 grid gap-6 xl:grid-cols-3">
             {services.map((service, index) => {
               const Icon = service.icon
+              const theme = serviceCardThemes[index]
 
               return (
                 <Reveal key={service.title} delay={index * 100} className="h-full">
-                  <article className="flex h-full flex-col rounded-[32px] border border-white/72 bg-white/86 p-7 shadow-[0_28px_80px_-48px_rgba(17,31,56,0.52)] backdrop-blur-sm">
-                    <div className="flex items-start justify-between gap-6">
-                      <span className="flex size-12 items-center justify-center rounded-full bg-secondary text-primary">
-                        <Icon className="size-5" aria-hidden="true" />
-                      </span>
-                      <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--brand)]">
+                  <article className="relative flex h-full overflow-hidden rounded-[32px] border border-white/82 bg-white/92 p-7 shadow-[0_28px_80px_-48px_rgba(11,31,58,0.42)] transition-all duration-300 hover:-translate-y-1 hover:border-[var(--brand)]/35 hover:shadow-[0_36px_85px_-42px_rgba(11,31,58,0.52)]">
+                    <div
+                      className={`pointer-events-none absolute inset-x-0 top-0 h-28 ${theme.header}`}
+                      aria-hidden="true"
+                    >
+                      <span className="absolute right-7 top-7 text-[11px] font-semibold uppercase tracking-[0.2em] text-white/78">
                         WSS Service
                       </span>
+                      <span className="absolute -right-8 -bottom-16 size-40 rounded-full border border-white/18" />
                     </div>
 
-                    <h3 className="mt-7 font-serif text-2xl font-semibold text-foreground">
-                      {service.title}
-                    </h3>
-                    <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-                      {service.description}
-                    </p>
+                    <div className="relative flex h-full flex-col pt-8">
+                      <span className={`flex size-12 items-center justify-center rounded-full ${theme.icon}`}>
+                        <Icon className="size-5" aria-hidden="true" />
+                      </span>
 
-                    <div className="mt-6 flex flex-wrap gap-2">
-                      {service.points.map((point) => (
-                        <span
-                          key={point}
-                          className="rounded-full border border-border/80 bg-secondary/70 px-3 py-1.5 text-xs font-medium text-foreground"
-                        >
-                          {point}
-                        </span>
-                      ))}
+                      <h3 className="mt-7 font-serif text-2xl font-semibold text-foreground">
+                        {service.title}
+                      </h3>
+                      <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+                        {service.description}
+                      </p>
+
+                      <div className="mt-6 flex flex-wrap gap-2">
+                        {service.points.map((point) => (
+                          <span
+                            key={point}
+                            className="rounded-full border border-[var(--brand)]/16 bg-secondary/78 px-3 py-1.5 text-xs font-medium text-foreground"
+                          >
+                            {point}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </article>
                 </Reveal>
@@ -413,7 +437,7 @@ export default function HomePage() {
 
       <section className="py-20 md:py-28">
         <div className="shell">
-          <Reveal className="overflow-hidden rounded-[38px] bg-primary px-6 py-12 text-primary-foreground shadow-[0_34px_90px_-48px_rgba(17,31,56,0.72)] md:px-10 md:py-16 lg:px-14">
+          <Reveal className="section-navy-accent rounded-[38px] px-6 py-12 text-primary-foreground shadow-[0_34px_90px_-48px_rgba(17,31,56,0.72)] md:px-10 md:py-16 lg:px-14">
             <div className="max-w-3xl">
               <span className="eyebrow border-white/14 bg-white/7 text-primary-foreground/86">
                 <ShieldCheck className="size-3.5 text-accent" aria-hidden="true" />
@@ -455,7 +479,7 @@ export default function HomePage() {
           <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <Reveal className="max-w-xl">
               <span
-                className="eyebrow border-[rgba(74,78,161,0.12)] bg-white/72 text-[var(--brand)]"
+                className="eyebrow border-[rgba(22,118,229,0.18)] bg-white/72 text-[var(--brand)]"
               >
                 <Users className="size-3.5 text-accent" aria-hidden="true" />
                 Trusted By
