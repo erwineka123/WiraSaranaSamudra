@@ -48,10 +48,10 @@ export function ClientImage({
         key={src}
         src={src}
         alt={alt}
-        width={180}
-        height={80}
+        width={220}
+        height={100}
         priority={priority}
-        className="max-h-[65px] max-w-[150px] object-contain"
+        className="max-h-[100px] max-w-[220px] object-contain"
         onError={() => {
           if (index < imageExtensions.length - 1) {
             setIndex((current) => current + 1)

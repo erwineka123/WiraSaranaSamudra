@@ -17,6 +17,25 @@ type ServiceDetailPageProps = {
   service: ServiceItem
 }
 
+const servicePointCardThemes = [
+  {
+    header: 'bg-[linear-gradient(135deg,#146cff_0%,#0b1f3a_100%)]',
+    icon: 'text-[var(--brand)]',
+  },
+  {
+    header: 'bg-[linear-gradient(135deg,#ff7a2f_0%,#d9450c_100%)]',
+    icon: 'text-[var(--signal)]',
+  },
+  {
+    header: 'bg-[linear-gradient(135deg,#146cff_0%,#0b1f3a_100%)]',
+    icon: 'text-[var(--brand)]',
+  },
+  {
+    header: 'bg-[linear-gradient(135deg,#ff7a2f_0%,#d9450c_100%)]',
+    icon: 'text-[var(--signal)]',
+  },
+]
+
 export function ServiceDetailPage({ service }: ServiceDetailPageProps) {
   const Icon = service.icon
 
@@ -185,79 +204,70 @@ export function ServiceDetailPage({ service }: ServiceDetailPageProps) {
       ========================================================= */}
       <section className="section-ocean py-20 md:py-28">
         <div className="shell">
-          <div className="grid gap-14 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
-            {/* Left */}
-            <Reveal>
-              <div className="lg:sticky lg:top-28">
-                <div className="flex items-center gap-3">
-                  <span className="h-px w-10 bg-accent" />
+          <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between lg:gap-12">
+            <Reveal className="max-w-3xl">
+              <div className="flex items-center gap-3">
+                <span className="h-px w-10 bg-accent" />
 
-                  <span className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--brand)]">
-                    Service Overview
-                  </span>
-                </div>
-
-                <h2 className="mt-6 max-w-xl font-serif text-4xl font-semibold leading-tight tracking-tight text-foreground md:text-5xl">
-                  {service.pageTitle}
-                </h2>
-
-                <p className="mt-6 max-w-lg text-base leading-8 text-muted-foreground">
-                  {service.pageSummary}
-                </p>
-
-                {/* <div className="mt-8">
-                  <Link
-                    href="/contacts"
-                    className="group inline-flex items-center gap-2 text-sm font-semibold text-[var(--brand)]"
-                  >
-                    Talk to our team
-                    <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
-                  </Link>
-                </div> */}
+                <span className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--brand)]">
+                  Service Overview
+                </span>
               </div>
+
+              <h2 className="mt-6 font-serif text-4xl font-semibold leading-tight tracking-tight text-foreground md:text-5xl">
+                {service.pageTitle}
+              </h2>
+
+              <p className="mt-6 max-w-2xl text-base leading-8 text-muted-foreground">
+                {service.pageSummary}
+              </p>
             </Reveal>
 
-            {/* Right */}
-            <Reveal delay={100}>
-              <div>
-                <div className="border-l-2 border-accent pl-6 md:pl-8">
-                  <p className="text-lg leading-8 text-foreground md:text-xl md:leading-9">
-                    {service.pageNote}
-                  </p>
-                </div>
-
-                <div className="mt-12 grid gap-px overflow-hidden rounded-[24px] border border-border/70 bg-border/70 sm:grid-cols-2">
-                  {service.points.map((point, index) => {
-  const PointIcon = point.icon
-
-  return (
-    <div
-      key={point.text}
-      className="group bg-background p-6 transition-colors hover:bg-secondary/60"
-    >
-      <div className="flex items-start gap-4">
-        <span className="flex size-9 shrink-0 items-center justify-center rounded-full border border-border bg-secondary text-xs font-semibold text-[var(--brand)]">
-          {String(index + 1).padStart(2, '0')}
-        </span>
-
-        <div>
-          <PointIcon
-            className="mb-3 size-5 text-accent"
-            aria-hidden="true"
-          />
-
-          <p className="text-base font-medium leading-6 text-foreground">
-            {point.text}
-          </p>
-        </div>
-      </div>
-    </div>
-  )
-})}
-                </div>
+            <Reveal delay={100} className="w-full max-w-xl">
+              <div className="rounded-[28px] border border-[rgba(255,91,31,0.24)] bg-white/72 p-6 shadow-[0_20px_60px_-46px_rgba(11,31,58,0.42)] backdrop-blur-sm md:p-7">
+                <p className="text-lg leading-8 text-foreground md:text-xl">
+                  {service.pageNote}
+                </p>
               </div>
             </Reveal>
           </div>
+
+          <Reveal delay={160}>
+            <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+              {service.points.map((point, index) => {
+                const PointIcon = point.icon
+                const theme = servicePointCardThemes[index % servicePointCardThemes.length]
+
+                return (
+                  <article
+                    key={point.text}
+                    className="relative min-h-[166px] overflow-hidden rounded-[24px] border border-white/82 bg-white/92 p-5 shadow-[0_22px_55px_-42px_rgba(11,31,58,0.45)] transition-all duration-300 hover:-translate-y-1 hover:border-[var(--brand)]/35 hover:shadow-[0_30px_65px_-40px_rgba(11,31,58,0.55)]"
+                  >
+                    <div
+                      className={`pointer-events-none absolute inset-x-0 top-0 h-20 ${theme.header}`}
+                      aria-hidden="true"
+                    >
+                      <span className="absolute right-5 top-2 font-serif text-5xl font-semibold tracking-tight text-white/30">
+                        {String(index + 1).padStart(2, '0')}
+                      </span>
+                      <span className="absolute -right-7 -bottom-11 size-28 rounded-full border border-white/18" />
+                    </div>
+
+                    <div className="relative pt-16">
+                      <span
+                        className={`flex size-11 items-center justify-center rounded-full bg-white/95 shadow-[0_10px_24px_-16px_rgba(11,31,58,0.45)] ${theme.icon}`}
+                      >
+                        <PointIcon className="size-5" aria-hidden="true" />
+                      </span>
+                      <p className="mt-5 text-base font-semibold leading-6 text-foreground">
+                        {point.text}
+                      </p>
+                    </div>
+                  </article>
+                )
+              })}
+            </div>
+          </Reveal>
         </div>
       </section>
 

@@ -112,11 +112,11 @@ const workingStyle = [
 
 const clientLogos = ['client-1', 'client-2', 'client-3', 'client-4', 'client-5']
 const clientNames: Record<string, string> = {
-  'client-1': 'SUS PCL',
-  'client-2': 'NYK SHIPMANAGEMENT',
-  'client-3': 'PERTAMINA INTERNATIONAL SHIPPING',
+  'client-1': '',
+  'client-2': '',
+  'client-3': '',
   'client-4': 'SINGAPORE STRAIT SHIPMANAGER',
-  'client-5': 'SEA CHEFS',
+  'client-5': '',
 }
 
 export default function HomePage() {
@@ -504,7 +504,7 @@ export default function HomePage() {
     <Reveal key={client} delay={index * 90} className="h-full">
       <div
         className="
-          flex h-[145px] flex-col
+          flex h-[160px] flex-col
           items-center justify-between
           rounded-[24px]
           border border-white/72
@@ -512,34 +512,36 @@ export default function HomePage() {
           px-3 py-4
           shadow-[0_24px_70px_-48px_rgba(17,31,56,0.48)]
           backdrop-blur-sm
-          xl:h-[150px]
+          xl:h-[165px]
         "
       >
         {/* Logo */}
-        <div className="flex h-[75px] w-full items-center justify-center">
+        <div className="flex h-[90px] w-full items-center justify-center">
           <ClientImage
             baseName={client}
-            alt={`Logo ${clientNames[client]}`}
+            alt={clientNames[client] ? `Logo ${clientNames[client]}` : 'Client logo'}
             priority={index === 0}
           />
         </div>
 
         {/* Nama Client */}
-        <div className="flex min-h-[38px] w-full items-center justify-center">
-          <p
-            className="
-              max-w-[160px]
-              text-center
-              text-[9px]
-              font-semibold
-              leading-[1.3]
-              tracking-[-0.01em]
-              text-[#111f38]
-            "
-          >
-            {clientNames[client]}
-          </p>
-        </div>
+        {clientNames[client] && (
+          <div className="flex min-h-[38px] w-full items-center justify-center">
+            <p
+              className="
+                max-w-[160px]
+                text-center
+                text-[9px]
+                font-semibold
+                leading-[1.3]
+                tracking-[-0.01em]
+                text-[#111f38]
+              "
+            >
+              {clientNames[client]}
+            </p>
+          </div>
+        )}
       </div>
     </Reveal>
   ))}

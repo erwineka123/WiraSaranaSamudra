@@ -112,7 +112,7 @@ export function SiteHeader() {
                           onClick={() => setServicesOpen(false)}
                           className="rounded-2xl px-3 py-3 text-base font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
                         >
-                          {item.label}
+                          {item.title}
                         </Link>
                       ))}
                     </div>
@@ -191,7 +191,7 @@ export function SiteHeader() {
                           onClick={() => setOpen(false)}
                           className="rounded-2xl px-3 py-3 text-base font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
                         >
-                          {item.label}
+                          {item.title}
                         </Link>
                       ))}
                     </div>

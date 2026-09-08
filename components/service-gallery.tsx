@@ -72,10 +72,7 @@ export function ServiceGallery({
 
               <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-4 sm:bottom-6 sm:left-6 sm:right-6">
                 <div>
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/60">
-                    {activeImage.label}
-                  </p>
-                  <p className="mt-2 font-serif text-2xl font-semibold text-white sm:text-3xl">
+                  <p className="font-serif text-2xl font-semibold text-white sm:text-3xl">
                     Tug &amp; Barge Services
                   </p>
                 </div>
@@ -116,7 +113,7 @@ export function ServiceGallery({
                         ? 'w-9 bg-[var(--signal)]'
                         : 'w-3 bg-white/28 hover:bg-white/55'
                     }`}
-                    aria-label={`Show image ${index + 1}: ${image.label}`}
+                    aria-label={`Show gallery image ${index + 1}`}
                     aria-current={index === activeIndex ? 'true' : undefined}
                   />
                 ))}

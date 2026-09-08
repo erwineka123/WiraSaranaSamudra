@@ -27,7 +27,6 @@ export type ServicePoint = {
 export type ServiceGalleryImage = {
   src: string
   alt: string
-  label: string
 }
 
 export type ServiceItem = {
@@ -154,27 +153,22 @@ export const services: ServiceItem[] = [
       {
         src: '/images/services/Activity-1.jpeg',
         alt: 'Tug boat and barge on marine transport duty',
-        label: 'Marine transport operation',
       },
       {
         src: '/images/services/Activity-2.jpeg',
         alt: 'Tug boat supporting barge cargo movement',
-        label: 'Cargo movement support',
       },
       {
         src: '/images/services/Activity-3.jpeg',
         alt: 'Barge transport operation at sea',
-        label: 'Reliable project delivery',
       },
       {
         src: '/images/services/Activity-4.jpeg',
         alt: 'Tug boat and barge on marine transport duty',
-        label: 'Marine transport operation',
       },
       {
         src: '/images/services/Activity-5.jpeg',
         alt: 'Tug boat supporting barge cargo movement',
-        label: 'Cargo movement support',
       }
     ],
     points: [
@@ -421,9 +415,8 @@ export const services: ServiceItem[] = [
   },
 ]
 
-export const serviceMenuItems = services.map(({ pageRoute, shortTitle, title }) => ({
+export const serviceMenuItems = services.map(({ pageRoute, title }) => ({
   href: pageRoute,
-  label: shortTitle,
   title,
 }))
 
