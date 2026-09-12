@@ -12,9 +12,7 @@ export function SiteFooter() {
         text-primary-foreground
       "
     >
-      {/* ========================================
-          FOOTER BACKGROUND IMAGE
-          ======================================== */}
+      {/* footer background */}
 
       <Image
         src="/images/footer-background.png"
@@ -35,12 +33,7 @@ export function SiteFooter() {
         aria-hidden="true"
       />
 
-      {/* ========================================
-          BACKGROUND OVERLAY
-          Keeps text readable while preserving
-          the original background design
-          ======================================== */}
-
+      {/* Subtle background overlay */}
       <div
         className="
           pointer-events-none
@@ -69,16 +62,12 @@ export function SiteFooter() {
         aria-hidden="true"
       />
 
-      {/* ========================================
-          CONTENT
-          ======================================== */}
+      {/* content */}
 
       <div className="shell relative z-10 py-16 md:py-20">
         <div className="grid gap-12 lg:grid-cols-[1.35fr_0.65fr]">
 
-          {/* ====================================
-              COMPANY INFORMATION
-              ==================================== */}
+          {/* company information */}
 
           <div>
             <SiteLogo
@@ -99,11 +88,7 @@ export function SiteFooter() {
               through reliable maritime services, responsive coordination, and a
               practical execution mindset.
             </p>
-
-            {/* ====================================
-                COMPANY BADGES
-                ==================================== */}
-
+            {/* company badges */}
             <div className="mt-8 flex flex-wrap gap-3">
 
               {/* SIUPKK */}
@@ -186,9 +171,7 @@ export function SiteFooter() {
             </div>
           </div>
 
-          {/* ====================================
-              CONTACT
-              ==================================== */}
+          {/* contact */}
 
           <div>
             <h3
@@ -295,10 +278,7 @@ export function SiteFooter() {
           </div>
         </div>
 
-        {/* ========================================
-            BOTTOM DIVIDER
-            ======================================== */}
-
+        {/* bottom divider */}
         <div
           className="
             mt-14

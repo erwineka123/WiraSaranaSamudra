@@ -48,48 +48,48 @@ export type ServiceItem = {
 
 export const services: ServiceItem[] = [
   {
-  slug: 'ship-agency-services',
-  pageRoute: '/service-1',
-  icon: Anchor,
-  title: 'Ship Agency Services',
-  shortTitle: 'Ship Agency',
-  description:
-    'Professional ship agency services to ensure smooth, efficient, and compliant vessel operations throughout port activities.',
-  imagePath: '/images/services/service-1.png',
-  imageAlt: 'Ship agency operations on a vessel at port',
-  pageEyebrow: 'Port Coordination',
-  pageTitle: 'Managed vessel calls with clear coordination and documentation.',
-  pageSummary:
-    'We handle arrival coordination, port clearance, berthing support, and departure handling so vessel movements remain organized from start to finish.',
-  pageNote:
-    'Ideal for vessel owners and operators who want one partner to manage port-side communication and paperwork.',
-  points: [
-    {
-      icon: FileCheck,
-      text: 'Vessel documentation and port clearance',
-    },
-    {
-      icon: Landmark,
-      text: 'Coordination with port authorities',
-    },
-    {
-      icon: LogIn,
-      text: 'Clearance in and clearance out',
-    },
-    {
-      icon: Anchor,
-      text: 'Berthing and port arrangements',
-    },
-    {
-      icon: Users,
-      text: 'Crew change coordination',
-    },
-    {
-      icon: ClipboardCheck,
-      text: 'Operational support during port stay',
-    },
-  ],
-},
+    slug: 'ship-agency-services',
+    pageRoute: '/service-1',
+    icon: Anchor,
+    title: 'Ship Agency Services',
+    shortTitle: 'Ship Agency',
+    description:
+      'Professional ship agency services to ensure smooth, efficient, and compliant vessel operations throughout port activities.',
+    imagePath: '/images/services/service-1.png',
+    imageAlt: 'Ship agency operations on a vessel at port',
+    pageEyebrow: 'Port Coordination',
+    pageTitle: 'Managed vessel calls with clear coordination and documentation.',
+    pageSummary:
+      'We handle arrival coordination, port clearance, berthing support, and departure handling so vessel movements remain organized from start to finish.',
+    pageNote:
+      'Ideal for vessel owners and operators who want one partner to manage port-side communication and paperwork.',
+    points: [
+      {
+        icon: FileCheck,
+        text: 'Vessel documentation and port clearance',
+      },
+      {
+        icon: Landmark,
+        text: 'Coordination with port authorities',
+      },
+      {
+        icon: LogIn,
+        text: 'Clearance in and clearance out',
+      },
+      {
+        icon: Anchor,
+        text: 'Berthing and port arrangements',
+      },
+      {
+        icon: Users,
+        text: 'Crew change coordination',
+      },
+      {
+        icon: ClipboardCheck,
+        text: 'Operational support during port stay',
+      },
+    ],
+  },
   {
     slug: 'loading-unloading-supervision',
     pageRoute: '/service-2',

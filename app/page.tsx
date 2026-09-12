@@ -123,9 +123,7 @@ export default function HomePage() {
   return (
     <main>
       <section className="relative isolate overflow-hidden bg-[#f5faff] py-16 md:py-24 lg:py-28">
-        {/* =====================================================
-      BACKGROUND IMAGE
-  ====================================================== */}
+        {/* Background Image */}
         <div
           className="pointer-events-none absolute inset-0 -z-10 overflow-hidden"
           aria-hidden="true"
@@ -150,15 +148,11 @@ export default function HomePage() {
           <div className="absolute -bottom-28 -left-24 size-80 rounded-full bg-[var(--signal)]/10 blur-[110px]" />
         </div>
 
-        {/* =====================================================
-      CONTENT
-  ====================================================== */}
+        {/* content */}
         <div className="shell relative">
           <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
 
-            {/* =================================================
-          LEFT CONTENT
-      ================================================== */}
+            {/* left content */}
             <Reveal>
               <div className="max-w-3xl">
 
@@ -211,9 +205,7 @@ export default function HomePage() {
               </div>
             </Reveal>
 
-            {/* =================================================
-          RIGHT HERO IMAGE
-      ================================================== */}
+            {/* right hero image */}
             <Reveal
               className="relative lg:pl-6"
               direction="left"
@@ -266,9 +258,7 @@ export default function HomePage() {
                   </div>
                 </div>
 
-                {/* =================================================
-              INFO CARD BELOW IMAGE
-          ================================================== */}
+                {/* info card */}
                 <div className="mt-4 grid gap-3 rounded-[22px] border border-border/70 bg-white/70 p-4 backdrop-blur-md sm:grid-cols-[1fr_auto] sm:items-end">
                   <div>
                     <p className="text-[15px] font-semibold uppercase tracking-[0.22em] text-[var(--brand)]">
@@ -500,10 +490,10 @@ export default function HomePage() {
             </Reveal>
 
             <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 xl:grid-cols-3">
-  {clientLogos.map((client, index) => (
-    <Reveal key={client} delay={index * 90} className="h-full">
-      <div
-        className="
+              {clientLogos.map((client, index) => (
+                <Reveal key={client} delay={index * 90} className="h-full">
+                  <div
+                    className="
           flex h-[160px] flex-col
           items-center justify-between
           rounded-[24px]
@@ -514,21 +504,21 @@ export default function HomePage() {
           backdrop-blur-sm
           xl:h-[165px]
         "
-      >
-        {/* Logo */}
-        <div className="flex h-[90px] w-full items-center justify-center">
-          <ClientImage
-            baseName={client}
-            alt={clientNames[client] ? `Logo ${clientNames[client]}` : 'Client logo'}
-            priority={index === 0}
-          />
-        </div>
+                  >
+                    {/* Logo */}
+                    <div className="flex h-[90px] w-full items-center justify-center">
+                      <ClientImage
+                        baseName={client}
+                        alt={clientNames[client] ? `Logo ${clientNames[client]}` : 'Client logo'}
+                        priority={index === 0}
+                      />
+                    </div>
 
-        {/* Nama Client */}
-        {clientNames[client] && (
-          <div className="flex min-h-[38px] w-full items-center justify-center">
-            <p
-              className="
+                    {/* Nama Client */}
+                    {clientNames[client] && (
+                      <div className="flex min-h-[38px] w-full items-center justify-center">
+                        <p
+                          className="
                 max-w-[160px]
                 text-center
                 text-[9px]
@@ -537,15 +527,15 @@ export default function HomePage() {
                 tracking-[-0.01em]
                 text-[#111f38]
               "
-            >
-              {clientNames[client]}
-            </p>
-          </div>
-        )}
-      </div>
-    </Reveal>
-  ))}
-</div>
+                        >
+                          {clientNames[client]}
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                </Reveal>
+              ))}
+            </div>
           </div>
         </div>
       </section>

@@ -41,9 +41,7 @@ export function ServiceDetailPage({ service }: ServiceDetailPageProps) {
 
   return (
     <main>
-      {/* =========================================================
-          HERO
-      ========================================================= */}
+      {/* TO DO: HERO */}
       <section className="relative overflow-hidden bg-primary text-primary-foreground">
         <div className="absolute inset-0">
           <Image
@@ -62,7 +60,7 @@ export function ServiceDetailPage({ service }: ServiceDetailPageProps) {
           <div className="absolute inset-0 bg-gradient-to-t from-primary/85 via-transparent to-primary/14" />
         </div>
 
-        {/* Decorative grid */}
+        {/* grid */}
         <div className="pointer-events-none absolute inset-0 opacity-[0.08]">
           <div
             className="h-full w-full"
@@ -75,7 +73,7 @@ export function ServiceDetailPage({ service }: ServiceDetailPageProps) {
         </div>
 
         <div className="shell relative">
-          {/* Breadcrumb */}
+          {/* breadcrumb */}
           <Reveal>
             <div className="flex items-center gap-2 pt-8 text-base text-primary-foreground/55">
               <Link
@@ -105,7 +103,7 @@ export function ServiceDetailPage({ service }: ServiceDetailPageProps) {
           <div className="grid min-h-[620px] items-end gap-12 pb-16 pt-20 lg:grid-cols-[1fr_320px] lg:pb-20">
             <Reveal>
               <div className="max-w-4xl">
-                {/* Back */}
+                {/* back */}
                 <Link
                   href="/"
                   className="mb-8 inline-flex items-center gap-2 text-base font-medium text-primary-foreground/65 transition-colors hover:text-white"
@@ -114,7 +112,7 @@ export function ServiceDetailPage({ service }: ServiceDetailPageProps) {
                   Back to Home
                 </Link>
 
-                {/* Label */}
+                {/* label */}
                 <div className="mb-7 flex items-center gap-3">
                   <span className="inline-flex size-11 items-center justify-center rounded-full border border-white/15 bg-white/10 backdrop-blur-sm">
                     <Icon
@@ -134,6 +132,7 @@ export function ServiceDetailPage({ service }: ServiceDetailPageProps) {
                   </div>
                 </div>
 
+                {/* title */}
                 <h1 className="max-w-4xl font-serif text-5xl font-semibold leading-[0.98] tracking-tight md:text-7xl lg:text-[80px]">
                   {service.title}
                 </h1>
@@ -166,7 +165,7 @@ export function ServiceDetailPage({ service }: ServiceDetailPageProps) {
               </div>
             </Reveal>
 
-            {/* Hero side information */}
+            {/*  hero side information */}
             <Reveal delay={120}>
               <div className="hidden border-l border-white/15 pl-8 lg:block">
                 <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-primary-foreground/45">
@@ -199,9 +198,7 @@ export function ServiceDetailPage({ service }: ServiceDetailPageProps) {
         </div>
       </section>
 
-      {/* =========================================================
-          SERVICE INTRO
-      ========================================================= */}
+      {/* Service Overview */}
       <section className="section-ocean py-20 md:py-28">
         <div className="shell">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between lg:gap-12">
@@ -270,14 +267,11 @@ export function ServiceDetailPage({ service }: ServiceDetailPageProps) {
           </Reveal>
         </div>
       </section>
-
-      {/* =========================================================
-          IMAGE + DETAIL
-      ========================================================= */}
+      {/* TO DO: IMAGE DETAIL */}
       <section className="section-band-alt py-20 md:py-28">
         <div className="shell">
           <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20">
-            {/* Image */}
+            {/* image */}
             <Reveal>
               <div className="relative">
                 <div className="relative aspect-[4/5] overflow-hidden rounded-[30px] bg-primary">
@@ -291,7 +285,7 @@ export function ServiceDetailPage({ service }: ServiceDetailPageProps) {
 
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/10 to-transparent" />
 
-                  {/* Image label */}
+                  {/* image label */}
                   <div className="absolute bottom-6 left-6 right-6">
                     <div className="border border-white/15 bg-white/10 p-5 backdrop-blur-xl">
                       <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-white/55">
@@ -305,7 +299,7 @@ export function ServiceDetailPage({ service }: ServiceDetailPageProps) {
                   </div>
                 </div>
 
-                {/* Floating card */}
+                {/* floating card */}
                 <div className="absolute -bottom-8 -right-5 hidden w-56 border border-border/70 bg-background p-5 shadow-[0_25px_70px_-35px_rgba(17,31,56,0.5)] sm:block">
                   <ShieldCheck className="size-5 text-accent" />
 
@@ -398,9 +392,7 @@ export function ServiceDetailPage({ service }: ServiceDetailPageProps) {
         />
       )}
 
-      {/* =========================================================
-          SERVICE FOCUS
-      ========================================================= */}
+      {/* Service Focus */}
       <section className="bg-background py-20 md:py-28">
         <div className="shell">
           <Reveal>
@@ -472,9 +464,7 @@ export function ServiceDetailPage({ service }: ServiceDetailPageProps) {
         </div>
       </section>
 
-      {/* =========================================================
-          CTA
-      ========================================================= */}
+      {/* CTA */}
       <section className="section-navy-accent py-20 text-primary-foreground md:py-28">
         <div className="shell">
           <Reveal>

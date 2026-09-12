@@ -108,11 +108,10 @@ export function ServiceGallery({
                     key={image.src}
                     type="button"
                     onClick={() => setActiveIndex(index)}
-                    className={`h-1.5 rounded-full transition-all ${
-                      index === activeIndex
+                    className={`h-1.5 rounded-full transition-all ${index === activeIndex
                         ? 'w-9 bg-[var(--signal)]'
                         : 'w-3 bg-white/28 hover:bg-white/55'
-                    }`}
+                      }`}
                     aria-label={`Show gallery image ${index + 1}`}
                     aria-current={index === activeIndex ? 'true' : undefined}
                   />

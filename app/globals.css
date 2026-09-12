@@ -130,6 +130,7 @@
 }
 
 @keyframes drift {
+
   0%,
   100% {
     transform: translate3d(0, 0, 0) scale(1);
@@ -171,20 +172,16 @@
       radial-gradient(circle at 84% 9%, rgba(0, 174, 202, 0.13), transparent 18%),
       radial-gradient(circle at 50% 100%, rgba(20, 47, 89, 0.09), transparent 32%),
       linear-gradient(180deg, rgba(255, 255, 255, 0.26), rgba(255, 255, 255, 0)),
-      repeating-linear-gradient(
-        90deg,
+      repeating-linear-gradient(90deg,
         transparent 0,
         transparent 112px,
         rgba(74, 116, 158, 0.045) 112px,
-        rgba(74, 116, 158, 0.045) 113px
-      ),
-      repeating-linear-gradient(
-        0deg,
+        rgba(74, 116, 158, 0.045) 113px),
+      repeating-linear-gradient(0deg,
         transparent 0,
         transparent 112px,
         rgba(74, 116, 158, 0.035) 112px,
-        rgba(74, 116, 158, 0.035) 113px
-      );
+        rgba(74, 116, 158, 0.035) 113px);
     mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.58));
   }
 
@@ -267,8 +264,8 @@
       radial-gradient(circle at 88% 82%, rgba(0, 174, 202, 0.09), transparent 20%);
   }
 
-  .section-band > *,
-  .section-band-alt > * {
+  .section-band>*,
+  .section-band-alt>* {
     position: relative;
     z-index: 1;
   }
@@ -303,12 +300,9 @@
     filter: blur(10px);
     transform: translate3d(var(--reveal-x, 0px), var(--reveal-y, 28px), 0) scale(0.985);
     transition:
-      opacity var(--reveal-duration, 720ms) cubic-bezier(0.22, 1, 0.36, 1)
-        var(--reveal-delay, 0ms),
-      transform var(--reveal-duration, 720ms) cubic-bezier(0.22, 1, 0.36, 1)
-        var(--reveal-delay, 0ms),
-      filter var(--reveal-duration, 720ms) cubic-bezier(0.22, 1, 0.36, 1)
-        var(--reveal-delay, 0ms);
+      opacity var(--reveal-duration, 720ms) cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms),
+      transform var(--reveal-duration, 720ms) cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms),
+      filter var(--reveal-duration, 720ms) cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms);
     will-change: opacity, transform, filter;
   }
 
